@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ERIGrid 2.0 Test Case Repository – Test Case 3</title><link>/docs/erigrid-2.0/tc03/</link><description>Recent content in Test Case 3 on ERIGrid 2.0 Test Case Repository</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 03 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="/docs/erigrid-2.0/tc03/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Test Specification 3.01</title><link>/docs/erigrid-2.0/tc03/3.01/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/docs/erigrid-2.0/tc03/3.01/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ERIGrid 2.0 Test Case Repository – Test Case 3</title><link>/test-case-repository/docs/erigrid-2.0/tc03/</link><description>Recent content in Test Case 3 on ERIGrid 2.0 Test Case Repository</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 03 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="/test-case-repository/docs/erigrid-2.0/tc03/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Test Specification 3.01</title><link>/test-case-repository/docs/erigrid-2.0/tc03/3.01/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/test-case-repository/docs/erigrid-2.0/tc03/3.01/</guid><description>
 &lt;h2 id="test-specification-definition">Test Specification Definition&lt;/h2>
 &lt;table>
 &lt;tr>
@@ -112,7 +112,7 @@ Suspension criteria / Stopping criteria&lt;/th>
 &lt;li>Abnormal over or under voltage conditions&lt;/li>
 &lt;/ul>&lt;/td>
 &lt;/tr>
-&lt;/table></description></item><item><title>Docs: Experiment Specification 3.01.01</title><link>/docs/erigrid-2.0/tc03/3.01.01/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/docs/erigrid-2.0/tc03/3.01.01/</guid><description>
+&lt;/table></description></item><item><title>Docs: Experiment Specification 3.01.01</title><link>/test-case-repository/docs/erigrid-2.0/tc03/3.01.01/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/test-case-repository/docs/erigrid-2.0/tc03/3.01.01/</guid><description>
 &lt;h2 id="experiment-specification-definition">Experiment Specification Definition&lt;/h2>
 &lt;table>
 &lt;tr>
@@ -182,7 +182,7 @@ Storage of experiment data&lt;/th>
 &lt;td colspan=1>
 &lt;p>Csv&lt;/p>&lt;/td>
 &lt;/tr>
-&lt;/table></description></item><item><title>Docs: Experiment Specification 3.01.02</title><link>/docs/erigrid-2.0/tc03/3.01.02/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/docs/erigrid-2.0/tc03/3.01.02/</guid><description>
+&lt;/table></description></item><item><title>Docs: Experiment Specification 3.01.02</title><link>/test-case-repository/docs/erigrid-2.0/tc03/3.01.02/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/test-case-repository/docs/erigrid-2.0/tc03/3.01.02/</guid><description>
 &lt;h2 id="experiment-specification-definition">Experiment Specification Definition&lt;/h2>
 &lt;table>
 &lt;tr>

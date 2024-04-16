@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ERIGrid 2.0 Test Case Repository – Test Case TC12</title><link>/docs/erigrid-2.0/tc12/</link><description>Recent content in Test Case TC12 on ERIGrid 2.0 Test Case Repository</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 03 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="/docs/erigrid-2.0/tc12/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Test Specification TC12.TS01</title><link>/docs/erigrid-2.0/tc12/tc12.ts01/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/docs/erigrid-2.0/tc12/tc12.ts01/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ERIGrid 2.0 Test Case Repository – Test Case TC12</title><link>/test-case-repository/docs/erigrid-2.0/tc12/</link><description>Recent content in Test Case TC12 on ERIGrid 2.0 Test Case Repository</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 03 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="/test-case-repository/docs/erigrid-2.0/tc12/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Test Specification TC12.TS01</title><link>/test-case-repository/docs/erigrid-2.0/tc12/tc12.ts01/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/test-case-repository/docs/erigrid-2.0/tc12/tc12.ts01/</guid><description>
 &lt;h2 id="test-specification-definition">Test Specification Definition&lt;/h2>
 &lt;table>
 &lt;tr>
@@ -107,7 +107,7 @@ Suspension criteria / Stopping criteria&lt;/th>
 &lt;li>predictive controller unable to predict next step (infeasible model)&lt;/li>
 &lt;/ul>&lt;/td>
 &lt;/tr>
-&lt;/table></description></item><item><title>Docs: Test Specification TC12.TS02</title><link>/docs/erigrid-2.0/tc12/tc12.ts02/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/docs/erigrid-2.0/tc12/tc12.ts02/</guid><description>
+&lt;/table></description></item><item><title>Docs: Test Specification TC12.TS02</title><link>/test-case-repository/docs/erigrid-2.0/tc12/tc12.ts02/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/test-case-repository/docs/erigrid-2.0/tc12/tc12.ts02/</guid><description>
 &lt;h2 id="test-specification-definition">Test Specification Definition&lt;/h2>
 &lt;table>
 &lt;tr>
@@ -203,7 +203,7 @@ Suspension criteria / Stopping criteria&lt;/th>
 &lt;td colspan=1>
 &lt;p>same as TC12.TS01&lt;/p>&lt;/td>
 &lt;/tr>
-&lt;/table></description></item><item><title>Docs: Control Function MENB-CF-VC</title><link>/docs/erigrid-2.0/tc12/menb-cf-vc/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/docs/erigrid-2.0/tc12/menb-cf-vc/</guid><description>
+&lt;/table></description></item><item><title>Docs: Control Function MENB-CF-VC</title><link>/test-case-repository/docs/erigrid-2.0/tc12/menb-cf-vc/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/test-case-repository/docs/erigrid-2.0/tc12/menb-cf-vc/</guid><description>
 &lt;h2 id="document-history">Document History&lt;/h2>
 &lt;table>
 &lt;tr>
@@ -633,7 +633,7 @@ References&lt;/th>
 &lt;td colspan=1>
 &lt;p>[1] J. Rocabert, A. Luna, F. Blaabjerg, and P. Rodriguez, “Control of Power Converters in AC Microgrids”, IEEE Trans. Power Electron., vol. 27, no. 11, pp. 4734-4749. Nov. 2012.&lt;/p>&lt;/td>
 &lt;/tr>
-&lt;/table></description></item><item><title>Docs: System Configuration MENB-SC</title><link>/docs/erigrid-2.0/tc12/menb-sc/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/docs/erigrid-2.0/tc12/menb-sc/</guid><description>
+&lt;/table></description></item><item><title>Docs: System Configuration MENB-SC</title><link>/test-case-repository/docs/erigrid-2.0/tc12/menb-sc/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/test-case-repository/docs/erigrid-2.0/tc12/menb-sc/</guid><description>
 &lt;h2 id="document-history">Document History&lt;/h2>
 &lt;table>
 &lt;tr>

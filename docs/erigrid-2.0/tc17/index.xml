@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ERIGrid 2.0 Test Case Repository – Test Case 17</title><link>/docs/erigrid-2.0/tc17/</link><description>Recent content in Test Case 17 on ERIGrid 2.0 Test Case Repository</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 03 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="/docs/erigrid-2.0/tc17/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Test Specification TC17.TS1</title><link>/docs/erigrid-2.0/tc17/tc17.ts1/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/docs/erigrid-2.0/tc17/tc17.ts1/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ERIGrid 2.0 Test Case Repository – Test Case 17</title><link>/test-case-repository/docs/erigrid-2.0/tc17/</link><description>Recent content in Test Case 17 on ERIGrid 2.0 Test Case Repository</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 03 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="/test-case-repository/docs/erigrid-2.0/tc17/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Test Specification TC17.TS1</title><link>/test-case-repository/docs/erigrid-2.0/tc17/tc17.ts1/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/test-case-repository/docs/erigrid-2.0/tc17/tc17.ts1/</guid><description>
 &lt;h2 id="test-specification-definition">Test Specification Definition&lt;/h2>
 &lt;table>
 &lt;tr>
@@ -105,7 +105,7 @@ Suspension criteria / Stopping criteria&lt;/th>
 &lt;td colspan=1>
 &lt;p>Elapsed time (fixed length experiment)&lt;/p>&lt;/td>
 &lt;/tr>
-&lt;/table></description></item><item><title>Docs: Test Specification TC17.TS2</title><link>/docs/erigrid-2.0/tc17/tc17.ts2/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/docs/erigrid-2.0/tc17/tc17.ts2/</guid><description>
+&lt;/table></description></item><item><title>Docs: Test Specification TC17.TS2</title><link>/test-case-repository/docs/erigrid-2.0/tc17/tc17.ts2/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/test-case-repository/docs/erigrid-2.0/tc17/tc17.ts2/</guid><description>
 &lt;h2 id="test-specification-definition">Test Specification Definition&lt;/h2>
 &lt;table>
 &lt;tr>
