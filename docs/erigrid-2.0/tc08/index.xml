@@ -1,0 +1,637 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ERIGrid 2.0 Test Case Repository – Test Case TC08</title><link>/docs/erigrid-2.0/tc08/</link><description>Recent content in Test Case TC08 on ERIGrid 2.0 Test Case Repository</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 03 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="/docs/erigrid-2.0/tc08/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Test Specification TC08.TS01</title><link>/docs/erigrid-2.0/tc08/tc08.ts01/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/docs/erigrid-2.0/tc08/tc08.ts01/</guid><description>
+&lt;h2 id="test-specification-definition">Test Specification Definition&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+ID&lt;/th>
+&lt;td colspan=1>
+&lt;p>TC08.TS01&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Reference to Test Case&lt;/th>
+&lt;td colspan=1>
+&lt;p>TC08&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Title of Test&lt;/th>
+&lt;td colspan=1>
+&lt;p>Local controller responds to service requests from aggregator controller&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Rationale&lt;/th>
+&lt;td colspan=1>
+&lt;p>This test characterizes district operation of a simple long district heat pipe with heat booster HP and without Booster Heater Controller and Electric Storage Controller active, seeking to demonstrate that the local controllers respond to service requests from the aggregator controller.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Specific Test System
+(graphical)&lt;/th>
+&lt;td colspan=1>
+&lt;p>The system under test includes an electrical system, a district heating system and a control system. Each is sketched below.&lt;/p>&lt;p>Thermal system&lt;/p>&lt;p>The thermal system is a simplified distribution network which includes a booster heat pump. The heat load is aggregated in two locations.&lt;/p>&lt;p>&lt;img src="image2.png"/>&lt;/p>&lt;p>Electrical system&lt;/p>&lt;p>The electrical system corresponds to a single feeder.&lt;/p>&lt;p>&lt;img src="image3.png"/>&lt;/p>&lt;p>Control domain coupling&lt;/p>&lt;p>&lt;img src="image4.png"/>&lt;/p>&lt;p>The distribution grid management does not form part of the system under test but are taken as exogenous signals.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Target measures&lt;/th>
+&lt;td colspan=1>
+&lt;p>See Test Design.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Input and output parameters&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>P_PCC: Measured apparent electrical import at the district electrical network point of common coupling [kWe]&lt;/li>
+&lt;li>Q_PCC: Measured heat import at the district heating network point of common coupling [kWq]&lt;/li>
+&lt;li>P_booster: Measured electrical active power consumption of district booster heater [kWe]&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Design&lt;/th>
+&lt;td colspan=1>
+&lt;p>The test comprises 24 hours of district operation. During these 24 hours, the heat pump controller is asked to keep the forward temperature of the connected pipe above 70ºC.&lt;/p>&lt;p>Further, these services are requested of the Aggregator by the Distribution Grid Management:&lt;/p>&lt;ul>
+&lt;li>for 07:00 to 09:00, keep district electrical consumption below P_import_limit kW..&lt;/li>
+&lt;li>for 11:00 to 14:00, keep district electrical consumption above P_export_limit kW.&lt;/li>
+&lt;li>for 17:00 to 19:00, keep district electrical consumption below P_import_limit kW&lt;/li>
+&lt;/ul>&lt;p>where these limits are defined as below.&lt;/p>&lt;p>The test consists of several runs:&lt;/p>&lt;ol>
+&lt;li>no service signal sent&lt;/li>
+&lt;li>service signals sent (gamma indicates the level of service requested – lower gamma = more service requested)&lt;/li>
+&lt;li>gamma = 1.0&lt;/li>
+&lt;li>gamma = 0.95&lt;/li>
+&lt;li>gamma = 0.90&lt;/li>
+&lt;li>gamma = 0.85&lt;/li>
+&lt;li>gamma = 0.80&lt;/li>
+&lt;/ol>&lt;p>By comparing these runs, whether the controllers respond to service requests can be established.&lt;/p>&lt;p>For run 1, set:&lt;/p>&lt;ul>
+&lt;li>P_import_limit = inf,&lt;/li>
+&lt;li>P_export_limit = -inf&lt;/li>
+&lt;li>gamma=1.0.&lt;/li>
+&lt;/ul>&lt;p>For subsequent runs (given the 99% quantile of district electrical import P_i_99 and the 1% quantile of district electrical import, P_i_1), the system is asked to restrict its import relative to the uncontrolled base case:&lt;/p>&lt;ul>
+&lt;li>P_export_limit= gamma * P_i_1 kWe&lt;/li>
+&lt;li>P_import_limit = gamma* P_i_99 kWe,&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Initial system state&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>each component is initialized to the state given in the associated dataset&lt;/li>
+&lt;li>the battery state of charge is set to 50% of nomimal energy&lt;/li>
+&lt;li>the district heating system is allowed to relax to a steady state with the heat pump turned off&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Evolution of system state and test signals&lt;/th>
+&lt;td colspan=1>
+&lt;p>Test signals:&lt;/p>&lt;ul>
+&lt;li>P_import_limit: District electrical consumption bound requested from battery/EV units [kWe]&lt;/li>
+&lt;li>P_export_limit: District electrical export bound requested from heating units [kWe]&lt;/li>
+&lt;li>gamma: Scaling factor for district import and export [n.u.]&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Other parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>N/A&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Temporal resolution&lt;/th>
+&lt;td colspan=1>
+&lt;p>The test is run at a fixed time step of 10 seconds.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Source of uncertainty&lt;/th>
+&lt;td colspan=1>
+&lt;p>Since the exact electrical demand signal consists of a deterministic trend and a randomized factor, each “run” above should be repeated 10 times, with the mean and standard deviation of each target metric recorded.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Suspension criteria / Stopping criteria&lt;/th>
+&lt;td colspan=1>
+&lt;p>N/A&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table></description></item><item><title>Docs: Test Specification TC08.TS02</title><link>/docs/erigrid-2.0/tc08/tc08.ts02/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/docs/erigrid-2.0/tc08/tc08.ts02/</guid><description>
+&lt;h2 id="test-specification-definition">Test Specification Definition&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+ID&lt;/th>
+&lt;td colspan=1>
+&lt;p>TC08.TS02&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Reference to Test Case&lt;/th>
+&lt;td colspan=1>
+&lt;p>TC08&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Title of Test&lt;/th>
+&lt;td colspan=1>
+&lt;p>Local controller responds to service requests from aggregator controller&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Rationale&lt;/th>
+&lt;td colspan=1>
+&lt;p>This test characterizes district operation with and without Booster Heater Controller and Electric Storage Controller active, seeking to demonstrate that the local controllers respond to service requests from the aggregator controller.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Specific Test System
+(graphical)&lt;/th>
+&lt;td colspan=1>
+&lt;p>The system under test includes an electrical system, a district heating system and a control system. Each is sketched below.&lt;/p>&lt;p>Thermal system&lt;/p>&lt;p>The block called “Row Houses” consists of multiple small loads which are aggregated into a single, larger load.&lt;/p>&lt;p>&lt;img src="image5.png"/>&lt;/p>&lt;p>Electrical system&lt;/p>&lt;p>Note, that only loads which are marked in red are inside the quarter under control. All buses are taken to be P-Q buses, with the grid acting as the slack bus. Rings 3-5 are summarized, as no buses are inside the district.&lt;/p>&lt;p>&lt;img src="image6.png"/>&lt;/p>&lt;p>Control domain coupling&lt;/p>&lt;p>&lt;img src="image7.png"/>&lt;/p>&lt;p>The distribution grid management does not form part of the system under test, but are taken as exogenous signals.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Target measures&lt;/th>
+&lt;td colspan=1>
+&lt;p>See Test Design.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Input and output parameters&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>P_PCC: Measured apparent electrical import at the district electrical network point of common coupling [kWe]&lt;/li>
+&lt;li>Q_PCC: Measured heat import at the district heating network point of common coupling [kWq]&lt;/li>
+&lt;li>P_booster: Measured electrical active power consumption of district booster heater [kWe]&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Design&lt;/th>
+&lt;td colspan=1>
+&lt;p>The test comprises 24 hours of district operation. During these 24 hours, the heat pump controller is asked to keep the forward temperature of the connected pipe above 70ºC.&lt;/p>&lt;p>Further, these services are requested of the Aggregator by the Distribution Grid Management:&lt;/p>&lt;ul>
+&lt;li>for 07:00 to 09:00, keep district electrical consumption below P_import_limit kW..&lt;/li>
+&lt;li>for 11:00 to 14:00, keep district electrical consumption above P_export_limit kW.&lt;/li>
+&lt;li>for 17:00 to 19:00, keep district electrical consumption below P_import_limit kW&lt;/li>
+&lt;/ul>&lt;p>where these limits are defined as below.&lt;/p>&lt;p>The test consists of several runs:&lt;/p>&lt;ol>
+&lt;li>no service signal sent&lt;/li>
+&lt;li>service signals sent&lt;/li>
+&lt;li>gamma = 1.0&lt;/li>
+&lt;li>gamma = 0.95&lt;/li>
+&lt;li>gamma = 0.90&lt;/li>
+&lt;li>gamma = 0.85&lt;/li>
+&lt;li>gamma = 0.80&lt;/li>
+&lt;/ol>&lt;p>By comparing these runs, whether the controllers respond to service requests can be established.&lt;/p>&lt;p>For run 1, set:&lt;/p>&lt;ul>
+&lt;li>P_import_limit = inf,&lt;/li>
+&lt;li>P_export_limit = -inf&lt;/li>
+&lt;li>gamma=1.0.&lt;/li>
+&lt;/ul>&lt;p>For subsequent runs (given the 99% quantile of district electrical import P_i_99 and the 1% quantile of district electrical import, P_i_1), the system is asked to restrict its import relative to the uncontrolled base case:&lt;/p>&lt;ul>
+&lt;li>P_export_limit= gamma * P_i_1 kWe&lt;/li>
+&lt;li>P_import_limit = gamma* P_i_99 kWe,&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Initial system state&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>each component is initialized to the state given in the associated dataset&lt;/li>
+&lt;li>the battery state of charge is set to 50% of nomimal energy&lt;/li>
+&lt;li>the district heating system is allowed to relax to a steady state with the heat pump turned off&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Evolution of system state and test signals&lt;/th>
+&lt;td colspan=1>
+&lt;p>Test signals:&lt;/p>&lt;ul>
+&lt;li>P_import_limit: District electrical consumption bound requested from battery/EV units [kWe]&lt;/li>
+&lt;li>P_export_limit: District electrical export bound requested from heating units [kWe]&lt;/li>
+&lt;li>gamma: Scaling factor for district import and export [n.u.]&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Other parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>N/A&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Temporal resolution&lt;/th>
+&lt;td colspan=1>
+&lt;p>The test is run at a fixed time step of 10 seconds.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Source of uncertainty&lt;/th>
+&lt;td colspan=1>
+&lt;p>Since the exact electrical demand signal consists of a deterministic trend and a randomized factor, each “run” above should be repeated 10 times, with the mean and standard deviation of each target metric recorded.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Suspension criteria / Stopping criteria&lt;/th>
+&lt;td colspan=1>
+&lt;p>N/A&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table></description></item><item><title>Docs: Control Function MENB-CF-PID</title><link>/docs/erigrid-2.0/tc08/menb-cf-pid/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/docs/erigrid-2.0/tc08/menb-cf-pid/</guid><description>
+&lt;h2 id="document-history">Document History&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=4>
+Document History&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Date&lt;/th>
+&lt;th colspan=1>
+Version&lt;/th>
+&lt;th colspan=1>
+Description&lt;/th>
+&lt;th colspan=1>
+Author&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;td colspan=1>
+&lt;p>2023-04-03&lt;/p>&lt;/td>
+&lt;td colspan=1>
+&lt;p>0.1&lt;/p>&lt;/td>
+&lt;td colspan=1>
+&lt;p>first draft&lt;/p>&lt;/td>
+&lt;td colspan=1>
+&lt;p>Edmund Widl (AIT)&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td colspan=1>
+&lt;p>2024-01-25&lt;/p>&lt;/td>
+&lt;td colspan=1>
+&lt;p>0.2&lt;/p>&lt;/td>
+&lt;td colspan=1>
+&lt;p>Added identification&lt;/p>&lt;/td>
+&lt;td colspan=1>
+&lt;p>Filip Pröstl Andrén (AIT)&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table>
+&lt;h2 id="control-function-identification">Control Function Identification&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=2>
+Control Function Identification&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Control Function ID&lt;/th>
+&lt;th colspan=1>
+Name&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;td colspan=1>
+&lt;p>MENB-CF-PID&lt;/p>&lt;/td>
+&lt;td colspan=1>
+&lt;p>PID controller for the hydraulic pump&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table>
+&lt;h2 id="functional-description">Functional Description&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+Functional Description&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;td colspan=1>
+&lt;p>Background:&lt;/p>&lt;p>System configuration MENB-SC includes a heat pump. A hydraulic pump controls the mass flow in the heat pump’s condenser loop, where cold water is drawn from the bottom of a storage tank, heated up in the heat pump’s condenser and fed back at the top of the tank.&lt;/p>&lt;p>Problem formulation:&lt;/p>&lt;p>The operation of the heat pump is limited by a power consumption setpoint (coming from a voltage controller). The controller specified in this document regulates the mass flow rate through the heat pump’s condenser loop via the hydraulic pump such that this power consumption setpoint is met. &lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table>
+&lt;h2 id="terminology">Terminology&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=2>
+Terminology&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;td colspan=1>
+&lt;p>PID controller&lt;/p>&lt;/td>
+&lt;td colspan=1>
+&lt;p>A proportional-integral-derivative (PID) controller is a control loop mechanism employing feedback that is widely used in applications requiring continuously modulated control. A PID controller continuously calculates an error value e(t) as the difference between a desired setpoint (SP) and a measured process variable (PV) and applies a correction based on proportional, integral, and derivative terms (denoted P, I, and D respectively).&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table>
+&lt;h2 id="methodology">Methodology&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+Methodology&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;td colspan=1>
+&lt;p>This control function implements a .&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table>
+&lt;h2 id="limitations">Limitations&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+Limitations&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;td colspan=1>
+&lt;p>N/A&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table>
+&lt;h2 id="inputs">Inputs&lt;/h2>
+&lt;h3 id="meas_hp_p_el">meas_hp_p_el&lt;/h3>
+&lt;table>
+&lt;tr>
+&lt;th colspan=2>
+Control Function Input&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Name&lt;/th>
+&lt;td colspan=1>
+&lt;p>meas_hp_p_el&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Type (according to SC description)&lt;/th>
+&lt;td colspan=1>
+&lt;p>MeasureConnection&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Unit&lt;/th>
+&lt;td colspan=1>
+&lt;p>kWel&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Range&lt;/th>
+&lt;td colspan=1>
+&lt;p>[0, 100]&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Expected update rate&lt;/th>
+&lt;td colspan=1>
+&lt;p>1 Hz&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Description&lt;/th>
+&lt;td colspan=1>
+&lt;p>measurement of electrical power consumption of heat pump &lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table>
+&lt;h3 id="setpoint_hp_p_el">setpoint_hp_p_el&lt;/h3>
+&lt;table>
+&lt;tr>
+&lt;th colspan=2>
+Control Function Input&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Name&lt;/th>
+&lt;td colspan=1>
+&lt;p>setpoint_hp_p_el&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Type (according to SC description)&lt;/th>
+&lt;td colspan=1>
+&lt;p>CtrlConnection&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Unit&lt;/th>
+&lt;td colspan=1>
+&lt;p>MWel&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Range&lt;/th>
+&lt;td colspan=1>
+&lt;p>[0, 0.15]&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Expected update rate&lt;/th>
+&lt;td colspan=1>
+&lt;p>every 5 min&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Description&lt;/th>
+&lt;td colspan=1>
+&lt;p>setpoint for power consumption of heat pump from voltage controller&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table>
+&lt;h2 id="outputs">Outputs&lt;/h2>
+&lt;h3 id="setpoint_cond_mflow">setpoint_cond_mflow&lt;/h3>
+&lt;table>
+&lt;tr>
+&lt;th colspan=2>
+Control Function Output&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Name&lt;/th>
+&lt;td colspan=1>
+&lt;p>setpoint_cond_mflow&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Type (according to SC description)&lt;/th>
+&lt;td colspan=1>
+&lt;p>CtrlConnection&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Unit&lt;/th>
+&lt;td colspan=1>
+&lt;p>kg/s&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Range&lt;/th>
+&lt;td colspan=1>
+&lt;p>[0, 10]&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Expected update rate&lt;/th>
+&lt;td colspan=1>
+&lt;p>1 Hz&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Description&lt;/th>
+&lt;td colspan=1>
+&lt;p>setpoint for heat pump condenser mass flow&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table>
+&lt;h2 id="use-cases">Use Cases&lt;/h2>
+&lt;h3 id="heat-pump-operation">Heat pump operation&lt;/h3>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+Use Case Example&lt;/th>
+&lt;th colspan=1>
+Heat pump operation&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Date created&lt;/th>
+&lt;td colspan=1>
+&lt;p>2023-04-03&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Actor&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>PID controller&lt;/li>
+&lt;li>hydraulic pump&lt;/li>
+&lt;li>heat pump&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Description&lt;/th>
+&lt;td colspan=1>
+&lt;p>The mass flow through the heat pump’s condenser loop is determined by the operation of the hydraulic pump. With the help of a PID controller (see Figure 1) the mass flow of the hydraulic pump is regulated.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Preconditions&lt;/th>
+&lt;td colspan=1>
+&lt;p>The power consumption setpoint for the heat pump is not zero.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Postconditions&lt;/th>
+&lt;td colspan=1>
+&lt;p>N/A&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Priority&lt;/th>
+&lt;td colspan=1>
+&lt;p>medium&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Frequency of use&lt;/th>
+&lt;td colspan=1>
+&lt;p>1 Hz&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Normal course&lt;/th>
+&lt;td colspan=1>
+&lt;p>The mass flow through the hydraulic pump is regulated using the heat pump’s power consumption as process variable and a setpoint (see Figure 1).&lt;/p>&lt;p>PID controller parameters:&lt;/p>&lt;ul>
+&lt;li>Kp = 1e-4&lt;/li>
+&lt;li>Ti = 10 s&lt;/li>
+&lt;li>Td = 10 s&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Alternative course&lt;/th>
+&lt;td colspan=1>
+&lt;p>In case the power consumption setpoint of the heat pump is set to zero, the hydraulic pump is switched off. The PID output is then set to zero, resulting in zero mass flow rate.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Exceptions&lt;/th>
+&lt;td colspan=1>
+&lt;p>N/A&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Assumptions&lt;/th>
+&lt;td colspan=1>
+&lt;p>N/A&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Notes and issues&lt;/th>
+&lt;td colspan=1>
+&lt;p>N/A&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table>
+&lt;h2 id="diagrams">Diagrams&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+Diagrams&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Schematic view of the control setup&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;td colspan=1>
+&lt;p>&lt;img src="image1.png"/>&lt;/p>&lt;p>Figure : PID control setup for regulating the heat pump’s power consumption.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table>
+&lt;h2 id="algorithms">Algorithms&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+Algorithms&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Controller algorithm&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;td colspan=1>
+&lt;pre tabindex="0">&lt;code>N/A
+&lt;/code>&lt;/pre>&lt;/td>
+&lt;/tr>
+&lt;/table>
+&lt;h2 id="deterministic-functions">Deterministic Functions&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+Deterministic Functions&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;td colspan=1>
+&lt;p>Error value:&lt;/p>&lt;p>&lt;math>&lt;mi>e&lt;/mi>&lt;mrow>&lt;mo>(&lt;/mo>&lt;mi>t&lt;/mi>&lt;mo>)&lt;/mo>&lt;/mrow>&lt;mo>=&lt;/mo>&lt;mtext>meas_hp_p_el&lt;/mtext>&lt;mrow>&lt;mo>(&lt;/mo>&lt;mi>t&lt;/mi>&lt;mo>)&lt;/mo>&lt;/mrow>&lt;mo>-&lt;/mo>&lt;mtext>setpoint_hp_p_el&lt;/mtext>&lt;mrow>&lt;mo>(&lt;/mo>&lt;mi>t&lt;/mi>&lt;mo>)&lt;/mo>&lt;/mrow>&lt;/math>&lt;/p>&lt;p>Control variable:&lt;/p>&lt;p>&lt;math>&lt;mtext>setpoint_cond_mflow&lt;/mtext>&lt;mtext> &lt;/mtext>&lt;mrow>&lt;mo>(&lt;/mo>&lt;mi>t&lt;/mi>&lt;mo>)&lt;/mo>&lt;/mrow>&lt;mo>=&lt;/mo>&lt;msub>&lt;mrow>&lt;mi>K&lt;/mi>&lt;/mrow>&lt;mrow>&lt;mtext>p&lt;/mtext>&lt;/mrow>&lt;/msub>&lt;mrow>&lt;mo>[&lt;/mo>&lt;mi>e&lt;/mi>&lt;mrow>&lt;mo>(&lt;/mo>&lt;mi>t&lt;/mi>&lt;mo>)&lt;/mo>&lt;/mrow>&lt;mo>+&lt;/mo>&lt;mn>1&lt;/mn>&lt;mo>/&lt;/mo>&lt;msub>&lt;mrow>&lt;mi>T&lt;/mi>&lt;/mrow>&lt;mrow>&lt;mtext>i&lt;/mtext>&lt;/mrow>&lt;/msub>&lt;mrow>&lt;msubsup>&lt;mo stretchy="false">∫&lt;/mo>&lt;mrow>&lt;mn>0&lt;/mn>&lt;/mrow>&lt;mrow>&lt;mi>t&lt;/mi>&lt;/mrow>&lt;/msubsup>&lt;mrow>&lt;mi>e&lt;/mi>&lt;mrow>&lt;mo>(&lt;/mo>&lt;mi>τ&lt;/mi>&lt;mo>)&lt;/mo>&lt;/mrow>&lt;mtext>d&lt;/mtext>&lt;mi>τ&lt;/mi>&lt;mi> &lt;/mi>&lt;mi> &lt;/mi>&lt;mi> &lt;/mi>&lt;/mrow>&lt;/mrow>&lt;mo>+&lt;/mo>&lt;msub>&lt;mrow>&lt;mi>T&lt;/mi>&lt;/mrow>&lt;mrow>&lt;mtext>d&lt;/mtext>&lt;/mrow>&lt;/msub>&lt;mfrac>&lt;mrow>&lt;mtext>d&lt;/mtext>&lt;mi>e&lt;/mi>&lt;mrow>&lt;mo>(&lt;/mo>&lt;mi>t&lt;/mi>&lt;mo>)&lt;/mo>&lt;/mrow>&lt;/mrow>&lt;mrow>&lt;mtext>d&lt;/mtext>&lt;mi>t&lt;/mi>&lt;/mrow>&lt;/mfrac>&lt;mo>]&lt;/mo>&lt;/mrow>&lt;/math>&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table>
+&lt;h2 id="stochastic-functions">Stochastic Functions&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+Stochastic Functions&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;td colspan=1>
+&lt;p>N/A&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table>
+&lt;h2 id="deployment">Deployment&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+Deployment&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;td colspan=1>
+&lt;p>A state-of-the-art pneumatic PID controller device is used for the deployment (see Figure 2).&lt;/p>&lt;p>&lt;img src="image2.jpeg"/>&lt;/p>&lt;p>Figure : PID controller device (source: Wikipedia)&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table>
+&lt;h2 id="references">References&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+References&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;td colspan=1>
+&lt;p>N/A&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table></description></item></channel></rss>

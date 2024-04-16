@@ -1,0 +1,221 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ERIGrid 2.0 Test Case Repository – Test Case 17</title><link>/docs/erigrid-2.0/tc17/</link><description>Recent content in Test Case 17 on ERIGrid 2.0 Test Case Repository</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 03 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="/docs/erigrid-2.0/tc17/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Test Specification TC17.TS1</title><link>/docs/erigrid-2.0/tc17/tc17.ts1/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/docs/erigrid-2.0/tc17/tc17.ts1/</guid><description>
+&lt;h2 id="test-specification-definition">Test Specification Definition&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+ID&lt;/th>
+&lt;td colspan=1>
+&lt;p>TC17.TS1&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Reference to Test Case&lt;/th>
+&lt;td colspan=1>
+&lt;p>TC17&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Title of Test&lt;/th>
+&lt;td colspan=1>
+&lt;p>Baseline test&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Rationale&lt;/th>
+&lt;td colspan=1>
+&lt;p>This test will establish the performance of the dispatch mechanism in the absence of a fault recovery mechanism by establishing the (permanent) performance loss of the dispatcher as a result of a permanent loss of one aggregator from its portfolio. This performance loss will express itself in a degradation of the dispatcher’s ability to track a setpoint, and will depend on the amount of flexibility which can be taken over by the remaining aggregator(s).&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Specific Test System
+(graphical)&lt;/th>
+&lt;td colspan=1>
+&lt;p>&lt;img src="image1.png"/>&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Target measures&lt;/th>
+&lt;td colspan=1>
+&lt;p>Deviation of service delivered from service requested&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Input and output parameters&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Input: Level of base load [kW]&lt;/li>
+&lt;li>Input: Service requested (by DSO) to dispatch unit&lt;/li>
+&lt;li>Input: Time of fault occurrence [s]&lt;/li>
+&lt;li>Output: Active power production/consumption at individual DERs [kW]&lt;/li>
+&lt;li>Output: Active power sum flow at grid connection [kW]&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Design&lt;/th>
+&lt;td colspan=1>
+&lt;p>The test can be performed as a hardware experiment, a simulation experiment or a combination of the two.&lt;/p>&lt;ul>
+&lt;li>Configure grid, DER units and base load to bring system into initial state (t=t0)&lt;/li>
+&lt;li>At t=t1, request a load relief service from the dispatch unit, wait for aggregators to activate DER units. Measure the effectiveness of the service delivery (impact on grid) after stabilization.&lt;/li>
+&lt;li>At t=t2, command fault simulator to disrupt communication to aggregator 1&lt;/li>
+&lt;li>Continue measuring the effectiveness of the service delivery for a period to determine the magnitude of the mismatch between service requested and service delivered.&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Initial system state&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>No service requested by dispatch unit&lt;/li>
+&lt;li>All DERs in neutral state (not delivering a service)&lt;/li>
+&lt;li>Feeder in overload condition by combined baseload+DER consumption&lt;/li>
+&lt;li>Fault simulator in bypass state (no fault)&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Evolution of system state and test signals&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Base load continues to change, following e.g. a random pattern&lt;/li>
+&lt;li>Aggregator response tracks changes in base load&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Other parameters&lt;/th>
+&lt;td colspan=1>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Temporal resolution&lt;/th>
+&lt;td colspan=1>
+&lt;p>Electrical system measurements: 1s. Logging of ICT events (messages exchanged, communication fault event etc.) using timestamps with at least 1ms resolution.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Source of uncertainty&lt;/th>
+&lt;td colspan=1>
+&lt;p>Residual time synchronization difference between ICT entities&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Suspension criteria / Stopping criteria&lt;/th>
+&lt;td colspan=1>
+&lt;p>Elapsed time (fixed length experiment)&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table></description></item><item><title>Docs: Test Specification TC17.TS2</title><link>/docs/erigrid-2.0/tc17/tc17.ts2/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/docs/erigrid-2.0/tc17/tc17.ts2/</guid><description>
+&lt;h2 id="test-specification-definition">Test Specification Definition&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+ID&lt;/th>
+&lt;td colspan=1>
+&lt;p>TC17.TS2&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Reference to Test Case&lt;/th>
+&lt;td colspan=1>
+&lt;p>TC17&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Title of Test&lt;/th>
+&lt;td colspan=1>
+&lt;p>Characterization of recovery from failure&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Rationale&lt;/th>
+&lt;td colspan=1>
+&lt;p>This test will characterize the response of the fault recovery mechanism. The results obtained will also allow a performance comparison with the baseline system.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Specific Test System
+(graphical)&lt;/th>
+&lt;td colspan=1>
+&lt;p>&lt;img src="image1.png"/>&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Target measures&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Time to restoration of service delivery&lt;/li>
+&lt;li>Deviation of service delivered from service requested&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Input and output parameters&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Input: Level of base load [kW]&lt;/li>
+&lt;li>Input: Service requested (by DSO) to dispatch unit&lt;/li>
+&lt;li>Input: Time of fault occurrence [s]&lt;/li>
+&lt;li>Output: Active power production/consumption at individual DERs [kW]&lt;/li>
+&lt;li>Output: Active power sum flow at grid connection [kW]&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Design&lt;/th>
+&lt;td colspan=1>
+&lt;p>The test can be performed as a hardware experiment, a simulation experiment or a combination of the two.&lt;/p>&lt;ul>
+&lt;li>Configure grid, DER units and base load to bring system into initial state (t=t0)&lt;/li>
+&lt;li>At t=t1, request a load relief service from the dispatch unit, wait for aggregators to activate DER units. Measure the effectiveness of the service delivery (impact on grid) after stabilization.&lt;/li>
+&lt;li>At t=t2, command fault simulator to disrupt communication to aggregator 1&lt;/li>
+&lt;li>Determine the points in time t=t3 where the dispatch unit has noticed the fault, and t=t4 where aggregator 2 has rescheduled.&lt;/li>
+&lt;li>Continuously measure the effectiveness of the service delivery in order to determine the disruption to service delivery during t3&amp;lt;t&amp;lt;t4.&lt;/li>
+&lt;li>Verify that the effectiveness of service delivery after t4 is comparable to before the fault (t&amp;lt;t2).&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Initial system state&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>No service requested by dispatch unit&lt;/li>
+&lt;li>All DERs in neutral state (not delivering a service)&lt;/li>
+&lt;li>Feeder in overload condition by combined baseload+DER consumption&lt;/li>
+&lt;li>Fault simulator in bypass state (no fault)&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Evolution of system state and test signals&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Base load continues to change, following e.g. a random pattern&lt;/li>
+&lt;li>Aggregator response tracks changes in base load&lt;/li>
+&lt;li>Dispatch unit moves from “service delivery” to “fault recovery” and back to “service delivery”&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Other parameters&lt;/th>
+&lt;td colspan=1>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Temporal resolution&lt;/th>
+&lt;td colspan=1>
+&lt;p>Electrical system measurements: 1s. Logging of ICT events (messages exchanged, communication fault event etc.) using timestamps with at least 1ms resolution.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Source of uncertainty&lt;/th>
+&lt;td colspan=1>
+&lt;p>Residual time synchronization difference between ICT entities&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Suspension criteria / Stopping criteria&lt;/th>
+&lt;td colspan=1>
+&lt;p>Elapsed time (fixed length experiment)&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table></description></item></channel></rss>

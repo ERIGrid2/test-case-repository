@@ -1,0 +1,925 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ERIGrid 2.0 Test Case Repository – ERIGrid 2.0</title><link>/docs/erigrid-2.0/</link><description>Recent content in ERIGrid 2.0 on ERIGrid 2.0 Test Case Repository</description><generator>Hugo -- gohugo.io</generator><language>en</language><atom:link href="/docs/erigrid-2.0/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Test Case 11</title><link>/docs/erigrid-2.0/tc11/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/docs/erigrid-2.0/tc11/</guid><description>
+&lt;h2 id="identification">Identification&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+ID&lt;/th>
+&lt;td colspan=1>
+&lt;p>11&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Author&lt;/th>
+&lt;td colspan=1>
+&lt;p>Tue Jensen, Kai Heussen (Edmund Widl)&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Version&lt;/th>
+&lt;td colspan=1>
+&lt;p>0.2&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Project&lt;/th>
+&lt;td colspan=1>
+&lt;p>SmILES, ERIGrid 2.0&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Date&lt;/th>
+&lt;td colspan=1>
+&lt;p>2020-12-16&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table>
+&lt;h2 id="test-case-definition">Test Case Definition&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=2>
+Name of the Test Case&lt;/th>
+&lt;td colspan=1>
+&lt;p>Characterization of power-to-heat service availability and its impact on the networks&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Narrative&lt;/th>
+&lt;td colspan=1>
+&lt;p>A network-integrated booster heat pump is used to also provide services to the electrical system. In the local electrical distribution network congestion may appear, and other flexibility options are available. &lt;/p>&lt;p>This test seeks to characterize the impact of the use of local flexibility on available regulating power from a local district. The test targets an examination of the ability of the system to provide these services when under conflict. &lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Function(s) under Investigation (FuI)&lt;/th>
+&lt;td colspan=1>
+&lt;p>The heating system provides services to the electrical system (a) congestion management - electrical import and export limitation; and (b) regulating power provision. &lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Object under Investigation (OuI)&lt;/th>
+&lt;td colspan=1>
+&lt;p>The characterization concerns the Booster Heater Controller and the Electric Storage Controller in combination with the District Supervisory Controller.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Domain under Investigation (DuI)&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>power (low voltage distribution network)&lt;/li>
+&lt;li>heat (coupling points to thermal network)&lt;/li>
+&lt;li>control (storage and heat network control)&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Purpose of Investigation (PoI)&lt;/th>
+&lt;td colspan=1>
+&lt;p>Characterize the impact use of local flexibility on available regulating power from a local district.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=3>
+&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+System under Test (SuT)&lt;/th>
+&lt;td colspan=1>
+&lt;p>&lt;img src="image1.png"/>&lt;/p>&lt;p>“PCC” denotes the point of common coupling for the district to the external networks. All units connected downstream of the respective PCCs must be considered.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Functions under Test (FuT)&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>electrical and heat exchange (at respective PCC)&lt;/li>
+&lt;li>electrical energy bound violation&lt;/li>
+&lt;li>total district electricity export&lt;/li>
+&lt;li>total district thermal energy import&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=3>
+&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Test criteria (TCR)&lt;/th>
+&lt;td colspan=1>
+&lt;p>The TCR (test criteria) aim to quantify the resource and service conflicts: &lt;/p>&lt;p>1) the export/import from the electrical distribution network (including the respect for capacity limitations); &lt;/p>&lt;p>2) the service level at the district heating network (energy and service level violations)&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td colspan=1>
+&lt;/td>
+&lt;th colspan=1>
+Target Metrics (TM)&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>electrical energy bound violation in MWh: given a limit for , measure the violation via the total electrical energy consumption as&lt;/li>
+&lt;li>,&lt;/li>
+&lt;/ul>&lt;p>where is a one-sided error measure, e.g. (x)=x if x&amp;gt;0, else x=0.&lt;/p>&lt;ul>
+&lt;li>electrical and heat exchange (at respective PCC) in MWh&lt;/li>
+&lt;li>total district electricity export in MWh&lt;/li>
+&lt;li>total district thermal energy import in MWh&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td colspan=1>
+&lt;/td>
+&lt;th colspan=1>
+Variability Attributes (VA)&lt;/th>
+&lt;td colspan=1>
+&lt;p>Controllable factors:&lt;/p>&lt;ul>
+&lt;li>booster heater activation&lt;/li>
+&lt;li>electrical storage system activation&lt;/li>
+&lt;/ul>&lt;p>Uncontrollable factors:&lt;/p>&lt;ul>
+&lt;li>demand (electrical and thermal)&lt;/li>
+&lt;li>PV generation&lt;/li>
+&lt;li>prices&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td colspan=1>
+&lt;/td>
+&lt;th colspan=1>
+Quality Attributes (QA)&lt;/th>
+&lt;td colspan=1>
+&lt;p>N/A&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table>
+&lt;h2 id="qualification-strategy">Qualification Strategy&lt;/h2>
+&lt;p>The PoI is addressed first using a simple implementation to verify the test concept and the functional principles, the outcome of TS01 is a preliminary characterisation of the same TCR as TS02. &lt;/p>&lt;p>TS02 will then refine and validate the characterisation on a more realistic study case. &lt;/p></description></item><item><title>Docs: Test Case 17</title><link>/docs/erigrid-2.0/tc17/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/docs/erigrid-2.0/tc17/</guid><description>
+&lt;h2 id="identification">Identification&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+ID&lt;/th>
+&lt;td colspan=1>
+&lt;p>17&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Project&lt;/th>
+&lt;td colspan=1>
+&lt;p>ERIGrid 2.0&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Date&lt;/th>
+&lt;td colspan=1>
+&lt;p>5/2/2021&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table>
+&lt;h2 id="test-case-definition">Test Case Definition&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=2>
+Name of the Test Case&lt;/th>
+&lt;td colspan=1>
+&lt;p>Fault tolerance/ recovery of a multi-aggregator dispatch mechanism&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Narrative&lt;/th>
+&lt;td colspan=1>
+&lt;p>In a section of an electrical distribution grid, multiple (&amp;gt;=2) aggregators operate independently of each other. Each of the aggregators maintains a portfolio of flexible DER units under contract. The contract provides for on-demand delivery of a grid service (e.g. load reduction/production increase).&lt;/p>&lt;p>It is assumed that the primary customer for the grid service in question is the local DSO operating the grid section. It is also assumed that a fair mechanism exists for matching supply (aggregators) and demand (DSO). This mechanism could e.g. be a flexibility market - but the exact workings are not relevant to the test case. For the sake of simplicity, it is assumed that the unknown mechanism has produced a merit-order list of the services offered by the different aggregators, before the start of the test. A dispatch unit is tasked with continuously matching the service demand indicated by the DSO using the merit order list, and to submit service activation requests to the appropriate aggregators.&lt;/p>&lt;p>At some point in time after the start of the test, a communication fault disrupts communication between the dispatch unit and one of the aggregators. To ensure that the service demand is met, the dispatch unit must decide whether the fault is temporary or permanent, and arrange for meeting the service demand with the remaining aggregator(s).&lt;/p>&lt;p>It is assumed that an aggregator affected by a communication fault will continue to function, i.e. service definitions agreed with the dispatch unit will continue to be delivered. However, due to the lack of updates from the dispatch unit, these services will eventually diverge from the evolving needs of the grid.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Function(s) under Investigation (FuI)&lt;/th>
+&lt;td colspan=1>
+&lt;p>Communication fault detection and impact mitigation. &lt;/p>&lt;p>A communication fault in the context of this test case is defined as the inability of the dispatch unit to communicate with one or more aggregators, caused by a disruption of the communication link. Implementations of the two functions will typically require functionality both on the dispatch unit as well as on the aggregator side.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Object under Investigation (OuI)&lt;/th>
+&lt;td colspan=1>
+&lt;p>Aggregator dispatch unit&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Domain under Investigation (DuI)&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Electrical&lt;/li>
+&lt;li>ICT&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Purpose of Investigation (PoI)&lt;/th>
+&lt;td colspan=1>
+&lt;p>Characterisation of (the performance of) system recovery from a permanent communication failure.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=3>
+&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+System under Test (SuT)&lt;/th>
+&lt;td colspan=1>
+&lt;p>The test system consists of an electrical grid section, energy resources, aggregators, a dispatch unit, a service requester (DSO) and an ICT command and control infrastructure. The electrical grid section is a part of a LV and/or MV distribution grid (e.g. 0.4kV and 10kV) with a number of flexible DER units distributed across one or multiple feeders. The ICT infrastructure consists of three separate types of IT systems (dispatch unit, aggregator and DER controller) as well as the communication links between these entities.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Functions under Test (FuT)&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Communication fault detection and impact mitigation (FuI)&lt;/li>
+&lt;li>Coordinated congestion management, consisting of an algorithm for congestion management as well as the communication between units needed to implement the algorithm (i.e. between unit controllers and aggregators and between aggregators and dispatch unit)&lt;/li>
+&lt;li>Aggregator internal dispatch mechanism, consisting of portfolio management and unit dispatch&lt;/li>
+&lt;li>Unit controller functionality, consisting of local flexibility calculation and management&lt;/li>
+&lt;li>A dispatch mechanism for aggregators, executing on the dispatch unit.&lt;/li>
+&lt;li>A congestion detection method, emulating the determination of service requirements by a DSO.&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=3>
+&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Test criteria (TCR)&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Time to detection of a nonresponsive aggregator&lt;/li>
+&lt;li>Time to full service restoration&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td colspan=1>
+&lt;/td>
+&lt;th colspan=1>
+Target Metrics (TM)&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Time elapsed from the occurrence of a communication fault to the classification of an aggregator as nonresponsive by the dispatch unit [s]&lt;/li>
+&lt;li>Time elapsed from the occurrence of a communication fault to the restoration of a stable steady state in which the entire service demand as requested by the DSO is met by the aggregators [s].&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td colspan=1>
+&lt;/td>
+&lt;th colspan=1>
+Variability Attributes (VA)&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Controllable&lt;ul>
+&lt;li>Frequency of service change requests from dispatch unit to aggregators [1/10s to 1/10min]&lt;/li>
+&lt;li>Duration of communication failure [100ms to permanent]&lt;/li>
+&lt;li>Variability of baseload profile [0 to 100% of mean baseload]&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td colspan=1>
+&lt;/td>
+&lt;th colspan=1>
+Quality Attributes (QA)&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Confidence in the accuracy of the time measurements (measurement error &amp;lt;= +/- 10% of measured value)&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;/table>
+&lt;h2 id="qualification-strategy">Qualification Strategy&lt;/h2>
+&lt;p>The system will be characterized in two different domains:&lt;/p>&lt;ul>
+&lt;li>Isolated in the ICT domain: How well does the multi-aggregator system recover from a communication fault?&lt;/li>
+&lt;li>The overall performance of the system in the electrical power domain: What is the impact of the fault recovery in the ICT domain on the ability of the multi-aggregator system to deliver a power system service?&lt;/li>
+&lt;/ul>&lt;p>This will be achieved by a sequence of two tests:&lt;/p>&lt;ul>
+&lt;li>One test to determine the performance of a multi-aggregator system without any communication fault recovery mechanism. This will establish a baseline for overall system performance in the electrical power system domain.&lt;/li>
+&lt;li>A second test where a recovery mechanism is in place. This will allow both characterization objectives to be achieved by (a) measuring the performance of the fault recovery mechanism in the ICT domain, and (b) comparing the performance of the entire multi-aggregator system to the baseline results.&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Test Case 23</title><link>/docs/erigrid-2.0/tc23/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/docs/erigrid-2.0/tc23/</guid><description>
+&lt;h2 id="identification">Identification&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+ID&lt;/th>
+&lt;td colspan=1>
+&lt;p>23&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Author&lt;/th>
+&lt;td colspan=1>
+&lt;p>Tesfaye Amare Zerihun&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Version&lt;/th>
+&lt;td colspan=1>
+&lt;p>1&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Project&lt;/th>
+&lt;td colspan=1>
+&lt;p>ERIGrid 2.0&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Date&lt;/th>
+&lt;td colspan=1>
+&lt;p>10/05/2020&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table>
+&lt;h2 id="test-case-definition">Test Case Definition&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=2>
+Name of the Test Case&lt;/th>
+&lt;td colspan=1>
+&lt;p>Verification of the reliability of a redundant system or algorithm (e.g. failover)&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Narrative&lt;/th>
+&lt;td colspan=1>
+&lt;p>The aim of this test case is to assess and verify the reliability of failover systems in smart grids that relies on putting redundancy. Redundancy is mainly used for critical smart grid applications such as protection in substations. In general, the redundancy can be either for control systems (such as the SCADA controller), communication networks or network controller (such as SDN controller), or a redundancy in the sensors and actuators (CT/PTs, Merging units, Breakers). Specifically, this test case looks into the reliability of failover systems with a redundancy in the communication networks.&lt;/p>&lt;p>The ICT support system/communication network may fail due various reasons for e.g., component (hardware) failures, environmental failures (such as weather disruption failing multiple components), a power outage, overloading of the network (capacity shortage) or cyber-attack. A fail-over system tries to quickly detect failures and switch to backup systems (smooth transition in the case of active standby systems) or it tries to recover the system after experiencing some performance glitch (the case of passive standby system). Unlike active backup systems, in the case of passive redundant systems, there can be small system down time until the backup system is powered on and takeover. The test case investigates the reliability of active or passive fail over systems to verify if these systems can meet the requirements (delays, packet loss or system down time) specified by the smart grid application considered or requirements set by the standards and protocols such as IEC 61850.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Function(s) under Investigation (FuI)&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Exchange of data (measurement and control commands) through the communication network&lt;/li>
+&lt;li>Control functions on the local controllers / IEDs&lt;/li>
+&lt;li>Protection functions on the local controllers / IEDs&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Object under Investigation (OuI)&lt;/th>
+&lt;td colspan=1>
+&lt;p>Communication Network (network devices, switches, network links), control devices or IEDs&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Domain under Investigation (DuI)&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Information &amp;amp; Communication System&lt;/li>
+&lt;li>Control system&lt;/li>
+&lt;li>Power system&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Purpose of Investigation (PoI)&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>PoI#1: Characterization of the performance of fail-over systems with a varying degree of redundancy. &lt;ul>
+&lt;li>PoI#1.1: Characterization of the performance of fail-over systems with redundancy in the communication network.&lt;/li>
+&lt;li>PoI#1.2: Characterization of the performance of fail-over systems with redundancy in the controller/IED&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>&lt;ul>
+&lt;li>PoI#2: Characterization of the redundant communication/control system for its vulnerability towards cyber attacks&lt;/li>
+&lt;li>PoI#3: Verification of the system level performance with standard requirements (if it complies with the minimum expected KPIs e.g., down time, packet loss or delay)&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=3>
+&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+System under Test (SuT)&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Communication network (Switches, routers, network links) &lt;/li>
+&lt;li>Sensors (voltage sensors, CT/PT basic control), Actuators (breakers, intelligent switches)&lt;/li>
+&lt;li>SCADA Controller (for e.g., FLISR, voltage control, monitoring functions) or local controllers/IEDs&lt;/li>
+&lt;li>Power transmission system (substations, transmission lines)&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Functions under Test (FuT)&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Capability of the communication network/ devices to facilitate data exchange between controllers/IEDs, sensors and actuators (breaker, disconnectors)&lt;/li>
+&lt;li>Control and Protection functions&lt;/li>
+&lt;li>Monitoring capability of sensors (devices such as Merging units, PMUs)&lt;/li>
+&lt;li>Actuator (breaker, disconnector) functions&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=3>
+&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Test criteria (TCR)&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Run the system without introducing faults, and measure the communication network's performance during the normal operating condition… &lt;/li>
+&lt;li>Introduce a fault and measure the communication network performance degradation right after a failure/fault occur/injected.&lt;/li>
+&lt;li>Calculate and obtain the overall system performance (availability, reliability).&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td colspan=1>
+&lt;/td>
+&lt;th colspan=1>
+Target Metrics (TM)&lt;/th>
+&lt;td colspan=1>
+&lt;ol>
+&lt;li>End to end delay, packet loss&lt;ul>
+&lt;li>During a normal operating condition &lt;/li>
+&lt;li>After introducing a fault&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Up time, down time, availability and reliability &lt;ul>
+&lt;li>After introducing a fault&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td colspan=1>
+&lt;/td>
+&lt;th colspan=1>
+Variability Attributes (VA)&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Redundancy type and degree (active-active, active-standby, active-inactive)&lt;/li>
+&lt;li>Number of simultaneous (component) failures &lt;/li>
+&lt;li>Communication network traffic situation
+(background traffic)&lt;/li>
+&lt;li>Communication topology&lt;/li>
+&lt;li>Failure type &lt;ul>
+&lt;li>Cascading (from PS to CS)&lt;/li>
+&lt;li>Hardware&lt;/li>
+&lt;li>Software&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td colspan=1>
+&lt;/td>
+&lt;th colspan=1>
+Quality Attributes (QA)&lt;/th>
+&lt;td colspan=1>
+&lt;p>Pass: End to end delay (average, maximum) and packet loss are within the maximum limit or threshold values set by specifications on standard communication protocol or the smart grid application (such as protection) considered. OR, the availability, reliability measures are within the limit on the specification requirement set by system administrator.&lt;/p>&lt;ul>
+&lt;li>Packet loss &amp;gt; T, where T is a threshold value set according to the application (protection) type considered. &lt;/li>
+&lt;li>Packet delay larger than D ms, where D is the delay tolerance which depend on the application (protection) type considered. The delay tolerance varies from 1 ms (for bus bar protection), 4 to 8 ms (for other type of protection schemes) up to 800 ms for IED to SCADA communication.&lt;/li>
+&lt;/ul>&lt;p>Fail: If the measured metrics (delay, packet loss, availability, or reliability) exceeds the threshold values.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table>
+&lt;h2 id="qualification-strategy">Qualification Strategy&lt;/h2>
+&lt;p>&lt;img src="image1.png"/>&lt;/p></description></item><item><title>Docs: Test Case 3</title><link>/docs/erigrid-2.0/tc03/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/docs/erigrid-2.0/tc03/</guid><description>
+&lt;h2 id="identification">Identification&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+ID&lt;/th>
+&lt;td colspan=1>
+&lt;p>3&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Author&lt;/th>
+&lt;td colspan=1>
+&lt;p>L. Loizou, G. Makrides, M. Kynigos, S. Theocharidis&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Version&lt;/th>
+&lt;td colspan=1>
+&lt;p>1&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Project&lt;/th>
+&lt;td colspan=1>
+&lt;p>ERIGrid 2.0&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Date&lt;/th>
+&lt;td colspan=1>
+&lt;p>15/03/2021&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table>
+&lt;h2 id="test-case-definition">Test Case Definition&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=2>
+Name of the Test Case&lt;/th>
+&lt;td colspan=1>
+&lt;p>Real-time supervision of a photovoltaic (PV) system and control of operational settings for centralized active power limitation and localized voltage regulation&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Narrative&lt;/th>
+&lt;td colspan=1>
+&lt;p>The integration of high shares of variable renewable energy (VRE) technologies, such as PV, is essential for decarbonizing and meeting the demands of future grids but introduces new grid operation challenges. In particular, the variability and uncertainty of solar electricity incurs serious stability and reliability issues in power system operations, rendering new power system flexibility options critical for ensuring balanced operation. To this end, the increasing amount of PV generation, especially at the distribution level, can create problems to the power system with a few of the reported consequences being rapidly varying voltage profiles and increased frequency swings that exceed design or regulated limits. This is the main reason why utility grids with large share deployment of distributed PV systems are fostering the transformation towards modern digitally-enhanced technologies that will enable the centralized observability and control of underlying distributed energy resources (DERs). In order to resolve these issues, programmable automation controllers (PACs) and PV system smart inverters have the interoperability capability to process signal operational set-points originating from centralized control and supervisory systems for immediate control and implementation of different autonomous control strategies (i.e. Fixed Power Factor, Volt-VAR, Volt-Watt and Frequency-Watt). &lt;/p>&lt;p>In particular, intelligent edge devices such as PACs can be configured to act as a PV system power plant controller (PPC) and to pass signals that originate from centralized control and supervisory cloud-based systems to smart inverters for immediate controls (connection/disconnection of system and active power limitation). &lt;/p>&lt;p>Regarding voltage regulation, the Volt-VAR mode is the most employed and discussed localized control strategy for smart inverters. This is because of the ease at which voltage regulation can be achieved by controlling the reactive power produced by the inverter. More specifically, the Volt-VAR mode provides dynamic reactive power output (absorption or injection) through responses to voltage measurements. The reactive power output follows a specified Volt-VAR response (characteristic curve) which typically would have a dead-band around the target voltage where no reactive power is injected or absorbed. In contrast to current practises of enabling localized smart inverter controls through manual methods and on-site visits, the localized Volt-VAR control strategy can be implemented by enabling the function and setting the characteristic curve points through the centralized control and supervisory cloud-based dashboard. The set-points are then transferred to the PAC that processes and relays the control function to the smart inverter (signalling responses based on SunSpec and IEC 61850). &lt;/p>&lt;p>Another localized voltage regulation control mode is Volt-Watt. This control mode is applicable only to feeders with extreme over-voltage profiles and may also be enabled to operate in conjunction with the commonly applied Volt-VAR mode. Specifically, the rate of active power reduction is determined by the slope of the characteristic curve of set-points based on the voltage at the point of common coupling (PCC). To this end, this control strategy can be remotely enabled (configured at the centralized control and supervisory cloud-based dashboard) and set to the smart inverter (PAC processes control information and sets the control mode to the smart inverter) to provide active power reduction in case of voltage rises at the PCC, beyond National grid code levels. &lt;/p>&lt;p>In the occurrence of fault communication conditions (loss of cloud connectivity) the PAC is set to remain/switch to the Volt-VAR autonomous control mode (fallback settings in the absence of cloud connectivity). &lt;/p>&lt;p>The aim of this test case is to investigate coordinated real-time supervision and control strategies provided by cloud-based systems, PAC and SunSpec compliant smart inverters, for centralized active power limitation and localized voltage regulation. &lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Function(s) under Investigation (FuI)&lt;/th>
+&lt;td colspan=1>
+&lt;p>PV system centralized active power limitation and enabling localized reactive and active power control for voltage regulation.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Object under Investigation (OuI)&lt;/th>
+&lt;td colspan=1>
+&lt;p>PV system connected to a smart inverter (SunSpec compliant) that can receive automated control signals through the use of a PAC. The PAC processes real-time signals (set-points for immediate and localized controls) originating from a centralized control and supervisory cloud-based system. &lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Domain under Investigation (DuI)&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Electrical power system&lt;/li>
+&lt;li>Control&lt;/li>
+&lt;li>ICT&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Purpose of Investigation (PoI)&lt;/th>
+&lt;td colspan=1>
+&lt;p>Design of a cloud-based PV PPC capable of providing automated ancillary services by taking advantage of the smart inverter abilities for immediate control (active power limitation) and to perform the Volt-VAR and Volt-Watt control modes for voltage regulation.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=3>
+&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+System under Test (SuT)&lt;/th>
+&lt;td colspan=1>
+&lt;p>The SuT is composed of the following components:&lt;/p>&lt;ul>
+&lt;li>PV system&lt;/li>
+&lt;li>Smart Inverter&lt;/li>
+&lt;li>PAC &lt;/li>
+&lt;li>Cloud-based database and SCADA platform&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Functions under Test (FuT)&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Real-time signalling effectiveness of centralized control and supervisory cloud-based system for PV system active power limitation (active power limitation signals originating from the cloud are communicated to the PAC that acts as an edge device PPC. The PAC processes the signals and passes them to the inverter) &lt;/li>
+&lt;li>Volt-VAR and Volt-Watt localized control effectiveness for the provision of ancillary services (voltage regulation) from PV systems using smart inverter functionalities. The set-points of the characteristic curves are implemented at the cloud-based system dashboard and then relayed to the smart inverter via the PAC. &lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=3>
+&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Test criteria (TCR)&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Effectiveness of centralized control and supervisory cloud-based system to interoperate with on-site PPCs and smart inverters for real-time supervision and relaying of control set-points (immediate controls such as connection/disconnection, active power limitation and enabling control strategies)&lt;/li>
+&lt;li>Effectiveness of Volt-VAR localized control mode in controlling reactive power to regulate voltage (voltage levels within grid code limits at PCC)&lt;/li>
+&lt;li>Effectiveness of Volt-Watt localized control mode in controlling active power to regulate voltage (voltage levels within grid code limits at PCC)&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td colspan=1>
+&lt;/td>
+&lt;th colspan=1>
+Target Metrics (TM)&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Voltage deviation &lt;/li>
+&lt;li>Active power curtailment&lt;/li>
+&lt;li>Reactive power injection/absorption&lt;/li>
+&lt;li>Interoperability of PV inverter with the centralized control signals originating from the control and supervision cloud-based (communication effectiveness and latency of response) &lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td colspan=1>
+&lt;/td>
+&lt;th colspan=1>
+Variability Attributes (VA)&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>PV inverter immediate control and active and reactive power set-points&lt;/li>
+&lt;li>Control methods&lt;/li>
+&lt;li>Interoperability methods&lt;/li>
+&lt;li>Voltage limit set-points&lt;/li>
+&lt;li>Rate of increase/decrease of reactive or active power injection/absorption and limitation, respectively &lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td colspan=1>
+&lt;/td>
+&lt;th colspan=1>
+Quality Attributes (QA)&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Voltage staying within a specific range (±10%)&lt;/li>
+&lt;li>Control method reaction time latency (&amp;lt;3 seconds)&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;/table>
+&lt;h2 id="qualification-strategy">Qualification Strategy&lt;/h2>
+&lt;p>The implementation plan to meet the Purpose of Investigation (PoI) is to first design and simulate the PV power plant providing ancillary services, through different control methods, using the EMTP software offline and investigate whether the voltage is maintained within the predefined limits. Subsequently, the control model designs will be transferred to the real time simulator (RTS) for high fidelity control hardware-in-the-loop (CHIL) validation and verification. Finally, the test case will be demonstrated on a test-bench PV system that includes a smart inverter and controller using a PAC that processes signals that originate from a centralized control and supervision cloud-based system.&lt;/p></description></item><item><title>Docs: Test Case TC08</title><link>/docs/erigrid-2.0/tc08/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/docs/erigrid-2.0/tc08/</guid><description>
+&lt;h2 id="identification">Identification&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+ID&lt;/th>
+&lt;td colspan=1>
+&lt;p>TC08&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Author&lt;/th>
+&lt;td colspan=1>
+&lt;p>Tue Jensen, Kai Heussen, Edmund Widl&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Version&lt;/th>
+&lt;td colspan=1>
+&lt;p>1.0&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Project&lt;/th>
+&lt;td colspan=1>
+&lt;p>SmILES, ERIGrid 2.0&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Date&lt;/th>
+&lt;td colspan=1>
+&lt;p>2020-12-16&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table>
+&lt;h2 id="test-case-definition">Test Case Definition&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=2>
+Name of the Test Case&lt;/th>
+&lt;td colspan=1>
+&lt;p>Characterization of power-to-heat service availability and its impact on the networks&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Narrative&lt;/th>
+&lt;td colspan=1>
+&lt;p>A heating network-integrated booster heat pump is used to also provide ancillary services to the electrical system. In the local electrical distribution network congestion may appear, and other flexibility options are available. &lt;/p>&lt;p>This test seeks to characterize the impact of the use of local flexibility (to relieve congestion) on the available regulating power ancillary service from a local district. The test targets a quantification of the ability of the integrated system to provide flexibility services under conflict situations. &lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Function(s) under Investigation (FuI)&lt;/th>
+&lt;td colspan=1>
+&lt;p>The heating system provides services to the electrical system (a) congestion management - electrical import and export limitation; and (b) ancillary service/“regulating power” provision. &lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Object under Investigation (OuI)&lt;/th>
+&lt;td colspan=1>
+&lt;p>The characterization concerns the Booster Heater Controller and the Electric Storage Controller in combination with the District Supervisory Controller.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Domain under Investigation (DuI)&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>power (low voltage distribution network)&lt;/li>
+&lt;li>heat (coupling points to thermal network)&lt;/li>
+&lt;li>control (storage and heat network control)&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Purpose of Investigation (PoI)&lt;/th>
+&lt;td colspan=1>
+&lt;p>Characterize the impact use of local flexibility on available ancillary service capacity from a local district.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+System under Test (SuT)&lt;/th>
+&lt;td colspan=1>
+&lt;p>&lt;img src="image1.png"/>&lt;/p>&lt;p>“PCC” denotes the point of common coupling for the district to the external networks. All units connected downstream of the respective PCCs must be considered.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Functions under Test (FuT)&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>electrical and heat exchange (at respective PCC)&lt;/li>
+&lt;li>electrical energy bound violation&lt;/li>
+&lt;li>total district electricity export&lt;/li>
+&lt;li>total district thermal energy import&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=3>
+&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Test criteria&lt;/th>
+&lt;td colspan=1>
+&lt;p>The TCR (test criteria) aim to quantify the resource and service conflicts: &lt;/p>&lt;p>1) the export/import from the electrical distribution network (including the respect for capacity limitations); &lt;/p>&lt;p>2) the service level at the district heating network (energy and service level violations)&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td colspan=1>
+&lt;/td>
+&lt;th colspan=1>
+target metrics&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>electrical energy bound violation in MWh: given a limit for , measure the violation via the total electrical energy consumption as&lt;/li>
+&lt;li>,&lt;/li>
+&lt;/ul>&lt;p>where is a one-sided error measure, e.g. (x)=x if x&amp;gt;0, else x=0.&lt;/p>&lt;ul>
+&lt;li>electrical and heat exchange (at respective PCC) in MWh&lt;/li>
+&lt;li>total district electricity export in MWh&lt;/li>
+&lt;li>total district thermal energy import in MWh&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td colspan=1>
+&lt;/td>
+&lt;th colspan=1>
+variability attributes&lt;/th>
+&lt;td colspan=1>
+&lt;p>Controllable factors:&lt;/p>&lt;ul>
+&lt;li>booster heater activation&lt;/li>
+&lt;li>electrical storage system activation&lt;/li>
+&lt;/ul>&lt;p>Uncontrollable factors:&lt;/p>&lt;ul>
+&lt;li>demand (electrical and thermal)&lt;/li>
+&lt;li>PV generation&lt;/li>
+&lt;li>prices&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td colspan=1>
+&lt;/td>
+&lt;th colspan=1>
+quality attributes&lt;/th>
+&lt;td colspan=1>
+&lt;p>N/A&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table>
+&lt;h2 id="qualification-strategy">Qualification Strategy&lt;/h2>
+&lt;p>The PoI is addressed first using a simple implementation to verify the test concept and the functional principles, the outcome of TS01 is a preliminary characterisation of the same TCR as TS02. TS02 will then refine and validate the characterisation on a more realistic study case. &lt;/p></description></item><item><title>Docs: Test Case TC12</title><link>/docs/erigrid-2.0/tc12/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/docs/erigrid-2.0/tc12/</guid><description>
+&lt;h2 id="identification">Identification&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+ID&lt;/th>
+&lt;td colspan=1>
+&lt;p>TC12&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Author&lt;/th>
+&lt;td colspan=1>
+&lt;p>Benedikt Leitner, Edmund Widl&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Version&lt;/th>
+&lt;td colspan=1>
+&lt;p>2&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Project&lt;/th>
+&lt;td colspan=1>
+&lt;p>SmILES, ERIGrid 2.0&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Date&lt;/th>
+&lt;td colspan=1>
+&lt;p>2020-12-17&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table>
+&lt;h2 id="test-case-definition">Test Case Definition&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=2>
+Name of the Test Case&lt;/th>
+&lt;td colspan=1>
+&lt;p>Verification of improved self-consumption of RES in a coupled heat &amp;amp; power network using power-to-heat&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Narrative&lt;/th>
+&lt;td colspan=1>
+&lt;p>This test case is used to verify that the self-consumption of renewable energy sources in a coupled heat and power network improves when using distributed power-to-heat appliances compared to a base scenario without power-to-heat. Different control schemes can be applied to reach this goal, which can be assessed in the context of this test case.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Function(s) under Investigation (FuI)&lt;/th>
+&lt;td colspan=1>
+&lt;p>Control function(s) of power-to-heat appliances&lt;/p>&lt;p>Note: The actual control schemes (and the corresponding control functions) are defined in the test specifications.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Object under Investigation (OuI)&lt;/th>
+&lt;td colspan=1>
+&lt;p>External electric grid:&lt;/p>&lt;ul>
+&lt;li>power flows (to and from)&lt;/li>
+&lt;/ul>&lt;p>Gas heating boiler (for base load):&lt;/p>&lt;ul>
+&lt;li>heat generation&lt;/li>
+&lt;/ul>&lt;p>Local heating network:&lt;/p>&lt;ul>
+&lt;li>supply temperatures at thermal substations&lt;/li>
+&lt;li>differential pressures at thermal substations&lt;/li>
+&lt;/ul>&lt;p>Low voltage distribution network:&lt;/p>&lt;ul>
+&lt;li>voltages at consumer connection points&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Domain under Investigation (DuI)&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>electric (low voltage distribution network)&lt;/li>
+&lt;li>heat (local heating network)&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Purpose of Investigation (PoI)&lt;/th>
+&lt;td colspan=1>
+&lt;p>Verification of reduction of energy flows flowing out of the network. At the same time energy imports should not increase and the operational parameters of both networks must remain within acceptable ranges.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=3>
+&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+System under Test (SuT)&lt;/th>
+&lt;td colspan=1>
+&lt;p>The SuT comprises a coupled low-voltage distribution network and local heating network (sub-urban district), which host residential homes, offices and workshops. A high share of the building stock is connected to the heating network, which is supplied by a central gas-fired boiler. Generation from rooftop photovoltaic power plants covers a significant part of the annual electric energy demand. Electric boilers are installed in the heating network with the aim to further increase the self-consumption of photovoltaic generation at a network scale.&lt;/p>&lt;p>&lt;img src="image1.png"/>&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Functions under Test (FuT)&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>energy flows (in and out of the networks)&lt;/li>
+&lt;li>effort variables of both networks (bus voltages, supply temperatures, differential pressures)&lt;/li>
+&lt;li>loading of the transformer&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=3>
+&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=2>
+Test criteria (TCR)&lt;/th>
+&lt;td colspan=1>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td colspan=1>
+&lt;/td>
+&lt;th colspan=1>
+Target Metrics (TM)&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>total power flow from external electric grid in MWh&lt;/li>
+&lt;li>total heat flow from base district heating boiler in MWh&lt;/li>
+&lt;li>voltages at consumer connection points in p.u. &lt;/li>
+&lt;li>transformer loading in %&lt;/li>
+&lt;li>differential pressures at substations in bar&lt;/li>
+&lt;li>supply temperatures at substations in °C&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td colspan=1>
+&lt;/td>
+&lt;th colspan=1>
+Variability Attributes (VA)&lt;/th>
+&lt;td colspan=1>
+&lt;p>Controllable factors:&lt;/p>&lt;ul>
+&lt;li>electric boiler activation&lt;/li>
+&lt;li>gas boiler activation&lt;/li>
+&lt;/ul>&lt;p>Uncontrollable factors:&lt;/p>&lt;ul>
+&lt;li>demand (electrical and thermal)&lt;/li>
+&lt;li>PV generation&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td colspan=1>
+&lt;/td>
+&lt;th colspan=1>
+Quality Attributes (QA)&lt;/th>
+&lt;td colspan=1>
+&lt;p>The power flow to the external grid and the heat flow from the base district heating boiler are reduced compared to a scenario without power-to-heat appliances. Thus, self-consumption of RES is improved. At the same time, the power flow from the external grid is not allowed to increase more than 1%.&lt;/p>&lt;p>Moreover, the following technical criteria must be met:&lt;/p>&lt;ul>
+&lt;li>voltages at consumer connection points within 0.95 p.u. and 1.05 p.u. for 99% of time&lt;/li>
+&lt;li>differential pressures at substations within 0.9 bar and 5 bar for 99% of time&lt;/li>
+&lt;li>supply temperatures at substations above 65°C for 99% of time&lt;/li>
+&lt;li>transformer loading never goes above 100%&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;/table>
+&lt;h2 id="qualification-strategy">Qualification Strategy&lt;/h2></description></item></channel></rss>

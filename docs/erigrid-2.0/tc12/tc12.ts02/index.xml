@@ -1,0 +1,64 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ERIGrid 2.0 Test Case Repository – Test Specification TC12.TS02</title><link>/docs/erigrid-2.0/tc12/tc12.ts02/</link><description>Recent content in Test Specification TC12.TS02 on ERIGrid 2.0 Test Case Repository</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 03 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="/docs/erigrid-2.0/tc12/tc12.ts02/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Experiment Specification TC12.TS02.ES01</title><link>/docs/erigrid-2.0/tc12/tc12.ts02/tc12.ts02.es01/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/docs/erigrid-2.0/tc12/tc12.ts02/tc12.ts02.es01/</guid><description>
+&lt;h2 id="experiment-specification-definition">Experiment Specification Definition&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+ID&lt;/th>
+&lt;td colspan=1>
+&lt;p>TC12.TS02.ES01&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Reference to Test Specification&lt;/th>
+&lt;td colspan=1>
+&lt;p>TC12.TS02&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Title of Experiment&lt;/th>
+&lt;td colspan=1>
+&lt;p>Co-Simulation of Electric Boiler Activation for Excess Power Consumption with Model-predictive Control&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Research Infrastructure&lt;/th>
+&lt;td colspan=1>
+&lt;p>N/A&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Experiment Realisation&lt;/th>
+&lt;td colspan=1>
+&lt;p>The experiment is implemented as co-simulation using mosaik with a simulator synchronization step size of 15 minutes.&lt;/p>&lt;p>&lt;img src="image5.png"/>&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Experiment Setup
+(concrete lab equipment)&lt;/th>
+&lt;td colspan=1>
+&lt;p>Dedicated simulation components are implemented as FMUs for Co-Simulation:&lt;/p>&lt;ul>
+&lt;li>power system simulation: the power system is implemented as pandapower model, using consecutive power flow calculations to simulate the power system; the electric boilers are represented as PQ loads;&lt;/li>
+&lt;li>thermal network simulation: the local heating network and the electric boilers are modelled with Modelica (and compiled with Dymola); this model includes the proportional controllers that actuate the boilers;&lt;/li>
+&lt;li>model-predictive controller: the controller logic is implemented in Python &lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Experimental Design and
+Justification&lt;/th>
+&lt;td colspan=1>
+&lt;p>This is a basic co-simulation setup using the mosaik environment with FMUs.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Precision of equipment and measurement uncertainty&lt;/th>
+&lt;td colspan=1>
+&lt;p>N/A&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Storage of experiment data&lt;/th>
+&lt;td colspan=1>
+&lt;p>The output from the individual simulation components is stored as time series data (HDF5 data format).&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table></description></item></channel></rss>
