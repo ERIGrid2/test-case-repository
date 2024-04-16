@@ -1,4 +1,4 @@
-baseURL = "/test-case-repository/"
+baseURL = "https://erigrid2.github.io/test-case-repository/"
 title = "ERIGrid 2.0 Test Case Repository"
 
 # Language settings
