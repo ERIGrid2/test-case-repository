@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ERIGrid 2.0 Test Case Repository – ERIGrid 2.0</title><link>/test-case-repository/docs/erigrid-2.0/</link><description>Recent content in ERIGrid 2.0 on ERIGrid 2.0 Test Case Repository</description><generator>Hugo -- gohugo.io</generator><language>en</language><atom:link href="/test-case-repository/docs/erigrid-2.0/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Test Case 11</title><link>/test-case-repository/docs/erigrid-2.0/tc11/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/test-case-repository/docs/erigrid-2.0/tc11/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ERIGrid 2.0 Test Case Repository – ERIGrid 2.0</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/</link><description>Recent content in ERIGrid 2.0 on ERIGrid 2.0 Test Case Repository</description><generator>Hugo -- gohugo.io</generator><language>en</language><atom:link href="https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Test Case 11</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc11/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc11/</guid><description>
 &lt;h2 id="identification">Identification&lt;/h2>
 &lt;table>
 &lt;tr>
@@ -145,7 +145,7 @@ Quality Attributes (QA)&lt;/th>
 &lt;/tr>
 &lt;/table>
 &lt;h2 id="qualification-strategy">Qualification Strategy&lt;/h2>
-&lt;p>The PoI is addressed first using a simple implementation to verify the test concept and the functional principles, the outcome of TS01 is a preliminary characterisation of the same TCR as TS02. &lt;/p>&lt;p>TS02 will then refine and validate the characterisation on a more realistic study case. &lt;/p></description></item><item><title>Docs: Test Case 17</title><link>/test-case-repository/docs/erigrid-2.0/tc17/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/test-case-repository/docs/erigrid-2.0/tc17/</guid><description>
+&lt;p>The PoI is addressed first using a simple implementation to verify the test concept and the functional principles, the outcome of TS01 is a preliminary characterisation of the same TCR as TS02. &lt;/p>&lt;p>TS02 will then refine and validate the characterisation on a more realistic study case. &lt;/p></description></item><item><title>Docs: Test Case 17</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc17/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc17/</guid><description>
 &lt;h2 id="identification">Identification&lt;/h2>
 &lt;table>
 &lt;tr>
@@ -288,7 +288,7 @@ Quality Attributes (QA)&lt;/th>
 &lt;/ul>&lt;p>This will be achieved by a sequence of two tests:&lt;/p>&lt;ul>
 &lt;li>One test to determine the performance of a multi-aggregator system without any communication fault recovery mechanism. This will establish a baseline for overall system performance in the electrical power system domain.&lt;/li>
 &lt;li>A second test where a recovery mechanism is in place. This will allow both characterization objectives to be achieved by (a) measuring the performance of the fault recovery mechanism in the ICT domain, and (b) comparing the performance of the entire multi-aggregator system to the baseline results.&lt;/li>
-&lt;/ul></description></item><item><title>Docs: Test Case 23</title><link>/test-case-repository/docs/erigrid-2.0/tc23/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/test-case-repository/docs/erigrid-2.0/tc23/</guid><description>
+&lt;/ul></description></item><item><title>Docs: Test Case 23</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc23/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc23/</guid><description>
 &lt;h2 id="identification">Identification&lt;/h2>
 &lt;table>
 &lt;tr>
@@ -468,7 +468,7 @@ Quality Attributes (QA)&lt;/th>
 &lt;/tr>
 &lt;/table>
 &lt;h2 id="qualification-strategy">Qualification Strategy&lt;/h2>
-&lt;p>&lt;img src="image1.png"/>&lt;/p></description></item><item><title>Docs: Test Case 3</title><link>/test-case-repository/docs/erigrid-2.0/tc03/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/test-case-repository/docs/erigrid-2.0/tc03/</guid><description>
+&lt;p>&lt;img src="image1.png"/>&lt;/p></description></item><item><title>Docs: Test Case 3</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc03/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc03/</guid><description>
 &lt;h2 id="identification">Identification&lt;/h2>
 &lt;table>
 &lt;tr>
@@ -622,7 +622,7 @@ Quality Attributes (QA)&lt;/th>
 &lt;/tr>
 &lt;/table>
 &lt;h2 id="qualification-strategy">Qualification Strategy&lt;/h2>
-&lt;p>The implementation plan to meet the Purpose of Investigation (PoI) is to first design and simulate the PV power plant providing ancillary services, through different control methods, using the EMTP software offline and investigate whether the voltage is maintained within the predefined limits. Subsequently, the control model designs will be transferred to the real time simulator (RTS) for high fidelity control hardware-in-the-loop (CHIL) validation and verification. Finally, the test case will be demonstrated on a test-bench PV system that includes a smart inverter and controller using a PAC that processes signals that originate from a centralized control and supervision cloud-based system.&lt;/p></description></item><item><title>Docs: Test Case TC08</title><link>/test-case-repository/docs/erigrid-2.0/tc08/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/test-case-repository/docs/erigrid-2.0/tc08/</guid><description>
+&lt;p>The implementation plan to meet the Purpose of Investigation (PoI) is to first design and simulate the PV power plant providing ancillary services, through different control methods, using the EMTP software offline and investigate whether the voltage is maintained within the predefined limits. Subsequently, the control model designs will be transferred to the real time simulator (RTS) for high fidelity control hardware-in-the-loop (CHIL) validation and verification. Finally, the test case will be demonstrated on a test-bench PV system that includes a smart inverter and controller using a PAC that processes signals that originate from a centralized control and supervision cloud-based system.&lt;/p></description></item><item><title>Docs: Test Case TC08</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc08/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc08/</guid><description>
 &lt;h2 id="identification">Identification&lt;/h2>
 &lt;table>
 &lt;tr>
@@ -765,7 +765,7 @@ quality attributes&lt;/th>
 &lt;/tr>
 &lt;/table>
 &lt;h2 id="qualification-strategy">Qualification Strategy&lt;/h2>
-&lt;p>The PoI is addressed first using a simple implementation to verify the test concept and the functional principles, the outcome of TS01 is a preliminary characterisation of the same TCR as TS02. TS02 will then refine and validate the characterisation on a more realistic study case. &lt;/p></description></item><item><title>Docs: Test Case TC12</title><link>/test-case-repository/docs/erigrid-2.0/tc12/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>/test-case-repository/docs/erigrid-2.0/tc12/</guid><description>
+&lt;p>The PoI is addressed first using a simple implementation to verify the test concept and the functional principles, the outcome of TS01 is a preliminary characterisation of the same TCR as TS02. TS02 will then refine and validate the characterisation on a more realistic study case. &lt;/p></description></item><item><title>Docs: Test Case TC12</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc12/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc12/</guid><description>
 &lt;h2 id="identification">Identification&lt;/h2>
 &lt;table>
 &lt;tr>
