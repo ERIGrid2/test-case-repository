@@ -86,6 +86,9 @@ description = "A repository for smart grid test cases"
       block = true
     [markup.goldmark.renderer]
       unsafe = true
+    [markup.goldmark.renderHooks]
+      [markup.goldmark.renderHooks.link]
+        enableDefault = true
   [markup.highlight]
     # See a complete list of available styles at https://xyproto.github.io/splash/docs/all.html
     style = "tango"

@@ -6,5 +6,5 @@ description: >
   How to contribute to the test-case repository
 ---
 
-Please have a look at the [Getting Started](/docs/getting-started/) section.
+Please have a look at the [Getting Started]({{< ref "Getting started" >}}) section.
 We still have to define more detailed contribution guidelines.

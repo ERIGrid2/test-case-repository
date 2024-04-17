@@ -14,6 +14,5 @@ An easily accessible use-case repository for users with different background, ba
 
 ## Where should I go next?
 
-* [Getting Started](/docs/getting-started/): Get started with editing and adding new use-cases
-* [BRIDGE](/docs/bridge/): BRIDGE initiative use-cases
-* [PlatOne](/docs/platone/): BRIDGE initiative use-cases
+* [Getting Started]({{< ref "Getting started" >}}): Get started with editing and adding new use-cases
+* [Test Cases]({{< ref "docs" >}}): Browse the test cases in the repository
