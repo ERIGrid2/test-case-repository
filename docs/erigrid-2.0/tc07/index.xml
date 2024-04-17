@@ -1,0 +1,212 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ERIGrid 2.0 Test Case Repository – Test Case 7</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc07/</link><description>Recent content in Test Case 7 on ERIGrid 2.0 Test Case Repository</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 17 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc07/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Test Specification TC7.TS01</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc07/tc7.ts01/</link><pubDate>Wed, 17 Apr 2024 00:00:00 +0000</pubDate><guid>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc07/tc7.ts01/</guid><description>
+&lt;h2 id="test-specification-definition">Test Specification Definition&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+ID&lt;/th>
+&lt;td colspan=1>
+&lt;p>TC7.TS01&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Reference to Test Case&lt;/th>
+&lt;td colspan=1>
+&lt;p>TC7&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Title of Test&lt;/th>
+&lt;td colspan=1>
+&lt;p>Validation of the trading coordinator platform to get the internal prices based on the prosumer's received bids.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Rationale&lt;/th>
+&lt;td colspan=1>
+&lt;p>As the P2P Trading Coordinator is responsible for receiving the bids from the prosumers and send them back the internal price and is also in charge of managing the trading of energy with the retailer agent, this test seeks to evaluate the algorithm of the pricing module along with the performance of the communication module with the latter and the prosumers.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Specific Test System
+(graphical)&lt;/th>
+&lt;td colspan=1>
+&lt;p>Community-based P2P architecture&lt;/p>&lt;p>&lt;img src="image1.png"/>&lt;/p>&lt;p>P2P Trading Coordinator architecture&lt;/p>&lt;p>&lt;img src="image2.png"/>&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Target measures&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Price signal&lt;/li>
+&lt;li>Communication signals between agents&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Input and output parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>Input parameters&lt;/p>&lt;ul>
+&lt;li>Retailer’s price&lt;/li>
+&lt;li>Prosumer’s bids&lt;/li>
+&lt;/ul>&lt;p>Output parameters&lt;/p>&lt;ul>
+&lt;li>Internal price&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Design&lt;/th>
+&lt;td colspan=1>
+&lt;p>Optimise the internal price based on the Prosumer’s bids&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Initial system state&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Measurement of input parameters&lt;/li>
+&lt;li>Communication established&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Evolution of system state and test signals&lt;/th>
+&lt;td colspan=1>
+&lt;p>Evaluation of the algorithm response up to the calculation of the final internal price&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Other parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>N/A&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Temporal resolution&lt;/th>
+&lt;td colspan=1>
+&lt;p>It will depend on the price signal sample, which can be from minutes to hour resolution.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Source of uncertainty&lt;/th>
+&lt;td colspan=1>
+&lt;p>Price value, communication delay&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Suspension criteria / Stopping criteria&lt;/th>
+&lt;td colspan=1>
+&lt;p>Detection of abnormal price values, communication failure between agents&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table></description></item><item><title>Docs: Test Specification TC7.TS02</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc07/tc7.ts02/</link><pubDate>Wed, 17 Apr 2024 00:00:00 +0000</pubDate><guid>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc07/tc7.ts02/</guid><description>
+&lt;h2 id="test-specification-definition">Test Specification Definition&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+ID&lt;/th>
+&lt;td colspan=1>
+&lt;p>TC7.TS02&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Reference to Test Case&lt;/th>
+&lt;td colspan=1>
+&lt;p>TC7&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Title of Test&lt;/th>
+&lt;td colspan=1>
+&lt;p>Validation that the control signals derived from the decision-making process are feasible to the controllable electrical devices (technical criteria)&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Rationale&lt;/th>
+&lt;td colspan=1>
+&lt;p>The test is to evaluate the performance of the decision-making process in the Bidding module, which outputs are final energy, price bids, and the control signals for the controllable electrical devices.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Specific Test System
+(graphical)&lt;/th>
+&lt;td colspan=1>
+&lt;p>Prosumer architecture&lt;/p>&lt;p>&lt;img src="image3.png"/>&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Target measures&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Power on the devices and losses on the network&lt;/li>
+&lt;li>Device status&lt;/li>
+&lt;li>Voltage signal on several nodes&lt;/li>
+&lt;li>Price signal&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Input and output parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>Input parameters&lt;/p>&lt;ul>
+&lt;li>Weather data&lt;/li>
+&lt;li>Historical load data&lt;/li>
+&lt;li>Grid frequency&lt;/li>
+&lt;li>Grid voltage&lt;/li>
+&lt;li>Current per phase&lt;/li>
+&lt;li>Internal prices&lt;/li>
+&lt;li>Load parameters&lt;/li>
+&lt;/ul>&lt;p>Output parameters&lt;/p>&lt;ul>
+&lt;li>Power setpoints per device&lt;/li>
+&lt;li>Price bids&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Design&lt;/th>
+&lt;td colspan=1>
+&lt;p>The test considers several consecutive load and generation variations based on the forecasted modules, as wells as price bidding variations. These are needed to adequately evaluate the capability of the operation and bidding modules to cope with these conditions.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Initial system state&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Measurement of input parameters to perform a perfect forecast of RES and demand&lt;/li>
+&lt;li>Measurement of electrical parameters&lt;/li>
+&lt;li>The imbalance should be under 5%.&lt;/li>
+&lt;li>Optimal setpoints to the devices&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Evolution of system state and test signals&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Technical constraints (e.g., voltage level, losses, loading, unbalance) are verified as a result of the continuous connection of several controllable electrical devices. &lt;/li>
+&lt;li>Correction of the prosumers' bids based on their power consumption and generation forecast, as well as the fitting parameters of their devices' models&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Other parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>N/A&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Temporal resolution&lt;/th>
+&lt;td colspan=1>
+&lt;p>From several minutes to an hour &lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Source of uncertainty&lt;/th>
+&lt;td colspan=1>
+&lt;p>Environmental conditions, consumers’ demand, EVs arrivals, the accuracy of measured signals, communication delay, RES and demand forecasting&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Suspension criteria / Stopping criteria&lt;/th>
+&lt;td colspan=1>
+&lt;p>Violation of the technical operating levels of the grid, i.e., voltage, losses, and thermal capacity&lt;/p>&lt;p>A significant price deviation due to loss of communication&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table></description></item></channel></rss>

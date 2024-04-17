@@ -1,0 +1,103 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ERIGrid 2.0 Test Case Repository – Test Case 13</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc13/</link><description>Recent content in Test Case 13 on ERIGrid 2.0 Test Case Repository</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 17 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc13/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Test Specification 13.01</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc13/13.01/</link><pubDate>Wed, 17 Apr 2024 00:00:00 +0000</pubDate><guid>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc13/13.01/</guid><description>
+&lt;h2 id="test-specification-definition">Test Specification Definition&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+ID&lt;/th>
+&lt;td colspan=1>
+&lt;p>13.01&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Reference to Test Case&lt;/th>
+&lt;td colspan=1>
+&lt;p>TC13&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Title of Test&lt;/th>
+&lt;td colspan=1>
+&lt;p>Verification of large scale existing hydrogen storage for power system support&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Rationale&lt;/th>
+&lt;td colspan=1>
+&lt;p>The aim of the test is to verify the cost benefits and sustainability of large scale existing hydrogen storages for supporting and providing services to power systems. &lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Specific Test System
+(graphical)&lt;/th>
+&lt;td colspan=1>
+&lt;p>The system uses in particular an existing empty storage for hydrogen such as an empty natural gas storage or salt mine.&lt;/p>&lt;p>&lt;img src="image3.png"/>&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Target measures&lt;/th>
+&lt;td colspan=1>
+&lt;p>The test is successfully passed if the hydrogen storage can meaningfully support the power system balancing and via this remain profitable and sustainable.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Input and output parameters&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Point of common coupling measurements&lt;/li>
+&lt;li>setpoints for control of the hydrogen storage&lt;/li>
+&lt;li>Reaction time of storage&lt;/li>
+&lt;li>Profit&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Design&lt;/th>
+&lt;td colspan=1>
+&lt;p>This test needs to run in non-real-time for several years or seasons depending on the reaction time.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Initial system state&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Networks operating on nominal power, temperature and pressure&lt;/li>
+&lt;li>Storages are empty&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Evolution of system state and test signals&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>The storages are filled based on the overproduced renewable generation&lt;/li>
+&lt;li>Based on price signals the storages react and balance the power system&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Other parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>-&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Temporal resolution&lt;/th>
+&lt;td colspan=1>
+&lt;p>Dynamic, variable step size (seconds?)&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Source of uncertainty&lt;/th>
+&lt;td colspan=1>
+&lt;p>-&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Suspension criteria / Stopping criteria&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Critical violation of network operation constraints&lt;/li>
+&lt;li>Networks becoming unstable&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;/table></description></item></channel></rss>

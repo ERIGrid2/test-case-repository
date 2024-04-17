@@ -1,0 +1,328 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ERIGrid 2.0 Test Case Repository – Test Case 5</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc05/</link><description>Recent content in Test Case 5 on ERIGrid 2.0 Test Case Repository</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 17 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc05/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Test Specification 5.01</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc05/5.01/</link><pubDate>Wed, 17 Apr 2024 00:00:00 +0000</pubDate><guid>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc05/5.01/</guid><description>
+&lt;h2 id="test-specification-definition">Test Specification Definition&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+ID&lt;/th>
+&lt;td colspan=1>
+&lt;p>5.01&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Reference to Test Case&lt;/th>
+&lt;td colspan=1>
+&lt;p>TC5&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Title of Test&lt;/th>
+&lt;td colspan=1>
+&lt;p>Power efficiency and MPPT accuracy under balanced conditions&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Rationale&lt;/th>
+&lt;td colspan=1>
+&lt;p>Through this test two properties of the PV inverter are characterised. The first is the efficiency of the power conversion from DC to AC, whereas the second is the accuracy of the MPPT algorithm, namely its ability to maximize the DC input power. Both aspects are assessed by measuring the power for various values of AC power and DC voltage. The scope of this test is to produce two map diagrams which illustrate the variation of the two quantities as a function of the AC power and DC voltage plus one diagram that illustrates the efficiency as a function of the AC power for three different input voltage values (minimum, medium, and maximum). All measurements throughout the test are conducted under steady-state conditions. &lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Specific Test System
+(graphical)&lt;/th>
+&lt;td colspan=1>
+&lt;p>&lt;img src="image3.png"/>&lt;/p>&lt;p>The setup for this test as shown above consists of the following components:&lt;/p>&lt;ul>
+&lt;li>One LV AC bi-directional source that plays the role of the AC grid&lt;/li>
+&lt;li>One PV array which supplies with DC current the PV inverter. The PV array’s behaviour is determined by the environmental conditions.&lt;/li>
+&lt;li>One data logger device which is used to monitor and record the power values&lt;/li>
+&lt;li>One I-V trace module required for measuring the I-V characteristic of the array&lt;/li>
+&lt;li>Two transducers&lt;/li>
+&lt;li>One PV inverter which is the System (Device) under Test&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Target measures&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Power efficiency map as a function of output (AC) power and input (DC) voltage&lt;/li>
+&lt;li>Power efficiency curves as a function of output (AC) power for three input (DC) voltage values&lt;/li>
+&lt;li>MPPT accuracy map as a function of output (AC) power and input (DC) voltage&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Input and output parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>Input parameters&lt;/p>&lt;ul>
+&lt;li>Solar irradiance (W/m2)&lt;/li>
+&lt;li>Ambient temperature (oC)&lt;/li>
+&lt;li>PV modules parameters (Voc(V), Vmp(V), Isc(A), Imp(A), CTI(A/oC), CTV(V/oC), Rs(Ω))&lt;/li>
+&lt;li>PV array configuration&lt;/li>
+&lt;/ul>&lt;p>Output parameters&lt;/p>&lt;ul>
+&lt;li>Output (AC) power (W)&lt;/li>
+&lt;li>Input (DC) power (W)&lt;/li>
+&lt;li>Maximum theoretical DC power (W)&lt;/li>
+&lt;li>Input (DC) voltage (V)&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Design&lt;/th>
+&lt;td colspan=1>
+&lt;p>The test is organized and executed in multiple steps in which the input parameters are changed in a wide range of values. The variation range must be such that the full range of AC power and DC voltage are obtained. For each set of values, the system must be stable before each measurement is conducted and recorded, except for any small oscillation/variation that is intrinsic to the inverter’s behaviour due to the MPPT algorithm that is used.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Initial system state&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>The PV inverter is connected to both the AC source and the PV array&lt;/li>
+&lt;li>The PV module parameters are selected so that the power/voltage requirements of the inverter can be met&lt;/li>
+&lt;li>The PV array is configured in a connectivity that allows maximum DC power with minimum DC voltage (e.g., several parallel strings with a small number of modules per string). During the execution of the test this configuration is altered in order to increase the DC voltage for the same amount of power (same number of modules connected in fewer but longer strings)&lt;/li>
+&lt;li>The PV array receives very low or zero irradiance and produces very low or zero voltage&lt;/li>
+&lt;li>The inverter is in stand-by mode and remains as such until sufficient voltage is produced &lt;/li>
+&lt;li>The monitoring system is initialized and running&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Evolution of system state and test signals&lt;/th>
+&lt;td colspan=1>
+&lt;ol>
+&lt;li>The solar irradiance on the array slightly increases to a value that leads to activation of the PV inverter (e.g., 5% of the PAC)&lt;/li>
+&lt;li>The system stabilizes at the new operating point&lt;/li>
+&lt;li>The AC and DC powers, the DC voltage as well as the maximum theoretical DC power are recorded (the first three for at least 10s and averaged) &lt;/li>
+&lt;li>The solar irradiance is increased in order to achieve the next step in the AC power (e.g., 10%) &lt;/li>
+&lt;li>Steps 1-3 are repeated until an AC power of 110% of the nominal value is reached&lt;/li>
+&lt;li>The PV array configuration is modified in order to allow a slightly higher DC voltage and the same procedure (steps 1-3) is repeated for an AC power range between 5 and 110%&lt;/li>
+&lt;li>Step 6 is repeated until the maximum allowable DC voltage is reached. &lt;/li>
+&lt;/ol>&lt;p>The completion of the above steps signals the completion of the mapping test. One additional set of measurements, however, is necessary in order to obtain the efficiency curves for three constant voltages (min, medium, max). The steps are as follows:&lt;/p>&lt;ol>
+&lt;li>The solar irradiance on the array is slightly increased to a value that leads to activation of the PV inverter (e.g., 5% of the PAC.&lt;/li>
+&lt;li>The ambient temperature is slightly adjusted together with the irradiance in order for the DC voltage to become and remain equal to the minimum required value&lt;/li>
+&lt;li>The system stabilizes at the new operating point&lt;/li>
+&lt;li>The AC and DC powers, as well as the DC voltage are recorded for at least 10s and averaged. &lt;/li>
+&lt;li>The solar irradiance is increased in order to achieve the next step in the AC power (e.g., 10%). In parallel the temperature is adjusted in order to keep the voltage constant. &lt;/li>
+&lt;li>Steps 9-12 are repeated until the power is 110%&lt;/li>
+&lt;li>The PV array configuration is modified in order to allow a higher DC voltage, equal to the middle value required for the test. Steps 8-13 are repeated for an AC power range between 5 and 110%&lt;/li>
+&lt;li>The PV array configuration is modified in order to allow a higher DC voltage, equal to the maximum value required for the test. Steps 8-13 are repeated for an AC power range between 5 and 110%&lt;/li>
+&lt;/ol>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Other parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>N/A&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Temporal resolution&lt;/th>
+&lt;td colspan=1>
+&lt;p>A sampling time of &amp;lt;= 1 s for the instantaneous values is sufficient for this test to provide the necessary information since the values of all quantities are averaged within a 10-second interval &lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Source of uncertainty&lt;/th>
+&lt;td colspan=1>
+&lt;p>First and foremost, the precision of the measurement equipment can be a significant source of uncertainty. The precision should be carefully selected based on the range of the quantities during the test. Other uncertainties may be introduced due to the controllability of irradiance and temperature or the stability of the MPPT algorithm under specific conditions. Last but not least, a significant source of uncertainty may be the dynamic behaviour of the PV array especially when a simulator is used. In this case the output filter of the DC converter, that is used as a PV simulator, may introduce oscillation in current and voltage resulting in erroneous operation point or measurement.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Suspension criteria / Stopping criteria&lt;/th>
+&lt;td colspan=1>
+&lt;p>The test should be suspended and restarted if one of the quality attributes described in the TC is not met. Also, the test should be suspended are repeated if the AC voltage and frequency values are not nominal and lead to activation of the droop controllers. Lastly, stability should be ensured during each measurement. If for some reason (e.g., irradiance variations, severe MPPT oscillations) there is not stable operation of the inverter the test should be partly or completely suspended. &lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table></description></item><item><title>Docs: Experiment Specification 5.01.01</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc05/5.01.01/</link><pubDate>Wed, 17 Apr 2024 00:00:00 +0000</pubDate><guid>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc05/5.01.01/</guid><description>
+&lt;h2 id="experiment-specification-definition">Experiment Specification Definition&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+ID&lt;/th>
+&lt;td colspan=1>
+&lt;p>5.01.01&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Reference to Test Specification&lt;/th>
+&lt;td colspan=1>
+&lt;p>TS5.01 and TS5.02&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Title of Experiment&lt;/th>
+&lt;td colspan=1>
+&lt;p>Power efficiency and MPPT accuracy under various operating conditions&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Research Infrastructure&lt;/th>
+&lt;td colspan=1>
+&lt;p>PV &amp;amp; DG Lab: Centre for Renewable Energy Sources and Saving (CRES)&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Experiment Realisation&lt;/th>
+&lt;td colspan=1>
+&lt;p>For the specific experiment a mixed hardware/simulation setup is selected because of the nature of the SuT and the two PoIs. It is worth mentioning that the hardware equipment used for the AC grid and the PV array are emulators of their actual counterparts because fully controllable conditions are required, which can only be achieved by emulating the behaviour of them instead of using a real PV array and a connection to the actual AC grid. In this way, the AC (V, f) as well as the PV parameters (irradiance, temperature, etc.) are fully controllable throughout the experiment and reduce the risk of uncertainty and test failure. &lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Experiment Setup
+(concrete lab equipment)&lt;/th>
+&lt;td colspan=1>
+&lt;p>&lt;img src="image5.png"/>&lt;/p>&lt;p>The selected setup consists of the following devices:&lt;/p>&lt;ul>
+&lt;li>One 3-phase grid simulator (nominal values 400 V, 50 Hz, 12 kVA)&lt;/li>
+&lt;li>One DC amplifier (400 V, 25 A)&lt;/li>
+&lt;li>One computer/data logger &lt;/li>
+&lt;li>One 3-phase resistive load (up to 12 kW)&lt;/li>
+&lt;li>One digital power meter &lt;/li>
+&lt;li>Two circuit breakers, one on the AC and one on the DC side&lt;/li>
+&lt;li>One PV inverter as the SuT&lt;/li>
+&lt;/ul>&lt;p>The use of a grid simulator in this setup is crucial because it ensures constant operating conditions for the inverter on the AC side. The specific grid simulator is coupled with an AC load because it does not allow absorption of power. Therefore, the load is used to absorb the power generated by the PV inverter. The DC amplifier, on the other hand, is used to emulate the DC output of the PV array. In order to control the amplifier with an I-V characteristic a computer equipped with data logging and control capabilities is used. The specific computer monitors the instantaneous current and voltage on the DC side and controls the output voltage/current of the amplifier based on the selected I-V curve. The computer allows a number of possibilities including the selection of PV module characteristics, connectivity, irradiance and temperature. In addition, the computer is used as a monitoring device (I-V tracer and oscilloscope) which shows in real time the DC operating point of the inverter in conjunction with the theoretical I-V characteristic of the PV array. In this way, the user can identify the theoretical maximum power as well as the I-V curve under partial shading conditions. Last but not least, for the efficiency measurement a Digital Power meter is used. The specific device is simultaneously connected to the DC and AC sides of the inverter and directly provides fully synchronised and averaged measurements of input and output power for the efficiency calculation. The recording period of each measurement is 20 s.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Experimental Design and
+Justification&lt;/th>
+&lt;td colspan=1>
+&lt;p>For the efficiency and MPPT mapping test the steps are described in detail in TS5.01. Here an overview of these steps is provided from the viewpoint of the specific laboratory implementation:&lt;/p>&lt;ol>
+&lt;li>All connections are as shown in the experiment setup diagram with the two circuit breakers open&lt;/li>
+&lt;li>The computer application is launched and specific parameters for the PV arrays are set, including the PV module characteristics, the connectivity of the modules in the array, the irradiance and the temperature. The values are selected based on the procedure described in TS5.01&lt;/li>
+&lt;li>The DC amplifier is started &lt;/li>
+&lt;li>The DC breaker is closed in order to connect the PV simulator to the PV inverter’s input. Normally, under the initial conditions the PV inverter should not be able to start converting power due to low power on the DC side.&lt;/li>
+&lt;li>The grid simulator is initiated with the required voltage and frequency values (230 V for 1-phase and 400 V for 3-phase operation, 50 Hz) &lt;/li>
+&lt;li>The AC load is adjusted via its keypad controller in order to consume an active power equal to at least 130% of the maximum potential generation from the PV inverter. The safety margin of 20% is necessary in order to avoid any uncertainties in the values of the resistors due to heating.&lt;/li>
+&lt;li>The AC breaker is closed&lt;/li>
+&lt;li>The irradiance and temperature parameters in the PV simulator are adjusted to the first measuring point as described in TS5.01&lt;/li>
+&lt;li>A sufficient amount of time (i.e., 180 s) is allowed in order for the inverter to start converting power. This happens only the first time. Once the irradiance levels are high enough, and remain above this limit, the PV will remain in conversion mode. The specific time may vary based on the inverter specifications but the typical value is that of 3 min=180 s.&lt;/li>
+&lt;li>The values on the DPM display are quality checked and recorded. Also, the MPP value on the computer screen is recorded for the MPPT efficiency calculation&lt;/li>
+&lt;li>The irradiance and temperature values are adjusted so that the complete operating range is obtained as described in TS5.01&lt;/li>
+&lt;/ol>&lt;p>After the completion of this first round of measurements, the second round regarding the three efficiency curves is obtained. The steps for this procedure are exactly the same as before. The only difference is that the MPP measurement is not necessary and that the user must fine-tune the temperature/irradiance values in order to keep the DC voltage constant throughout each measurement.&lt;/p>&lt;p>Lastly, the MPPT efficiency under partial shading conditions is implemented in a similar way. Specifically, steps 1-7 are implemented exactly as described above. The irradiance level after step 7 is selected to a sizable amount in order to allow for a significant AC power at the output of the inverter (i.e., 50-100%). Once the inverter is stable, the user implements a step change in the irradiance level on a subset of the PV modules. The profile of this change must have been calculated in advance based on the experiment requirements (e.g., how lower the new power must be or how many maxima the power must show). The behaviour of the inverter is recorder and stored in real time with the computer against the theoretical I-V curve. This test may be repeated several times for different forms of the I-V curve. &lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Precision of equipment and measurement uncertainty&lt;/th>
+&lt;td colspan=1>
+&lt;p>For the measurement of the DC current and voltage via the computer/data logger the precision is determined by the resolution of the analogue input of the data logger. In this case, the used data acquisition card provides a 16-bit conversion resolution for both the current and the voltage measurements. Considering that the maximum operating values are 400 V and 25 A this results in an accuracy equal to 6mV and 0.4 mA respectively.&lt;/p>&lt;p>Furthermore, the DPM used allows a measurement accuracy equal to 0.04% of reading + 0.04% of range for the power measurements.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Storage of experiment data&lt;/th>
+&lt;td colspan=1>
+&lt;p>All data are stored in ‘CSV’ file format either manually (DPM) or automatically (computer/data logger).&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table></description></item><item><title>Docs: Test Specification 5.02</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc05/5.02/</link><pubDate>Wed, 17 Apr 2024 00:00:00 +0000</pubDate><guid>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc05/5.02/</guid><description>
+&lt;h2 id="test-specification-definition">Test Specification Definition&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+ID&lt;/th>
+&lt;td colspan=1>
+&lt;p>5.02&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Reference to Test Case&lt;/th>
+&lt;td colspan=1>
+&lt;p>TC5&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Title of Test&lt;/th>
+&lt;td colspan=1>
+&lt;p>MPPT accuracy under unbalanced/partial shading conditions&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Rationale&lt;/th>
+&lt;td colspan=1>
+&lt;p>During the operation of a PV system, it is possible for asymmetries in the operation of the PV array to happen. A case in point is the partial shading of PV modules. This results in a distorted I-V characteristic that leads to more than one maximum point in the P-V curve. The scope of this test is to assess the ability of the inverter, in particular the MPPT to detect the operation point that leads to the maximum power yield under such conditions.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Specific Test System
+(graphical)&lt;/th>
+&lt;td colspan=1>
+&lt;p>&lt;img src="image4.png"/>&lt;/p>&lt;p>The setup for this test is a reduced version of the previous test (efficiency test). For this test only the input (DC) power and voltage are necessary together with the detailed characteristic that the I-V tracer module provides. The components used in this test system are listed below:&lt;/p>&lt;ul>
+&lt;li>One LV AC bi-directional source that plays the role of the AC grid&lt;/li>
+&lt;li>One PV array which supplies with DC current the PV inverter. The PV array’s behaviour is determined by the environmental conditions.&lt;/li>
+&lt;li>One data logger device which is used to monitor and record the power values&lt;/li>
+&lt;li>One I-V tracer module required for measuring the I-V characteristic of the array&lt;/li>
+&lt;li>One transducer&lt;/li>
+&lt;li>One PV inverter which is the System (Device) under Test&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Target measures&lt;/th>
+&lt;td colspan=1>
+&lt;p>MPPT accuracy value(s)&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Input and output parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>Input parameters&lt;/p>&lt;ul>
+&lt;li>Solar irradiance (W/m2)&lt;/li>
+&lt;li>Ambient temperature (oC)&lt;/li>
+&lt;li>PV modules parameters (Voc(V), Vmp(V), Isc(A), Imp(A), CTI(A/oC), CTV(V/oC), Rs(Ω))&lt;/li>
+&lt;li>PV array configuration&lt;/li>
+&lt;/ul>&lt;p>Output parameters&lt;/p>&lt;ul>
+&lt;li>Input (DC) power (W)&lt;/li>
+&lt;li>I-V characteristic of the PV array&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Design&lt;/th>
+&lt;td colspan=1>
+&lt;p>The test is organized and executed in two steps in which a stepwise change in irradiance conditions is implemented on part of the PV array. The behaviour of the MPPT is recorded before and after the change in order to provide useful information about its response to the unbalanced conditions. The test can be repeated several times for the same or different conditions for a better understanding of the MPPT behaviour.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Initial system state&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>The PV inverter is connected to both the AC source and the PV array&lt;/li>
+&lt;li>The PV module parameters are selected so that the power/voltage are well within the operating range&lt;/li>
+&lt;li>The PV array is configured in a connectivity that allows power/voltage values well within the operating range&lt;/li>
+&lt;li>The PV array receives sufficient irradiance produce a voltage/power level within the required limits&lt;/li>
+&lt;li>The inverter is in stable operation and injects power to the AC source &lt;/li>
+&lt;li>The monitoring system is initialized and running&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Evolution of system state and test signals&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>The irradiance on a selected number of PV modules changes stepwise from the initial to a lower value. The final value can be equal or not for all the shaded modules&lt;/li>
+&lt;li>The inverter stabilizes at a new operating point&lt;/li>
+&lt;li>The DC power and voltage are recorded with a sampling time of &amp;lt;=1 s and for at least 10 s. Also, the I-V characteristic is recorded&lt;/li>
+&lt;li>The above steps are repeated as many times as the different partial shading combinations are&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Other parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>N/A&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Temporal resolution&lt;/th>
+&lt;td colspan=1>
+&lt;p>A sampling time of &amp;lt;=1 s for the instantaneous values is sufficient for this test to provide the necessary information since the values of all quantities are averaged within a 10-second interval &lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Source of uncertainty&lt;/th>
+&lt;td colspan=1>
+&lt;p>Uncertainties may be introduced due to the controllability of irradiance and temperature or the stability of the MPPT algorithm under the specific test conditions.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Suspension criteria / Stopping criteria&lt;/th>
+&lt;td colspan=1>
+&lt;p>The test should be suspended and restarted if one of the quality attributes described in the TC is not met. Also, stability should be ensured during each measurement. If for some reason (e.g., irradiance variations, severe MPPT oscillations) there is not stable operation of the inverter the test results should be partly or completely discarded. &lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table></description></item></channel></rss>

@@ -1,0 +1,97 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ERIGrid 2.0 Test Case Repository – Test Case 24</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc24/</link><description>Recent content in Test Case 24 on ERIGrid 2.0 Test Case Repository</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 17 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc24/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Test Specification 24.01</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc24/24.01/</link><pubDate>Wed, 17 Apr 2024 00:00:00 +0000</pubDate><guid>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc24/24.01/</guid><description>
+&lt;h2 id="test-specification-definition">Test Specification Definition&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+ID&lt;/th>
+&lt;td colspan=1>
+&lt;p>24.01&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Reference to Test Case&lt;/th>
+&lt;td colspan=1>
+&lt;p>Interoperability testing and validation in the activation chain of flexibility-related events in a local distribution network&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Title of Test&lt;/th>
+&lt;td colspan=1>
+&lt;p>Interoperability validation and evaluation of the activation chain to satisfy a DSO flexibility request as a response to a voltage disturbance event at a specific grid node.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Rationale&lt;/th>
+&lt;td colspan=1>
+&lt;p>The aim is to investigate through the interoperability validation tests, the interaction and information exchange between the involved actors for a flexibility activation event. This event will be triggered by a local node voltage disturbance (functional disruption) and followed by a consequent flexibility request.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Specific Test System
+(graphical)&lt;/th>
+&lt;td colspan=1>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Target measures&lt;/th>
+&lt;td colspan=1>
+&lt;p>In the system under test, the interoperability test will be in the simple “pass/fail” form. The time the system requires to restore the voltage back to the desirable deviation levels is evaluated, i.e., the time that the system takes to respond to the voltage support mechanism after a disturbance in the power grid.
+If this time = ∞ --&amp;gt; fail, else --&amp;gt; pass&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Input and output parameters&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Internal RTU time delay&lt;/li>
+&lt;li>Reference Voltage&lt;/li>
+&lt;li>Admitted Voltage Deviation&lt;/li>
+&lt;li>Time required for Flex to activate&lt;/li>
+&lt;li>Available flexibility capacity&lt;/li>
+&lt;li>Maximum activation time for flexibility&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Design&lt;/th>
+&lt;td colspan=1>
+&lt;p>A simulation period of X minutes long, during which a functional disruption is introduced in the system. This disruption causes a voltage disturbance and results in a flexibility activation request to restore the system back to acceptable conditions. The connection and communication between all the involved actors in the activation chain is evaluated under an interoperability point of view.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Initial system state&lt;/th>
+&lt;td colspan=1>
+&lt;p>Initially the system service is operating “as usual”. The grid loads are at their nominal values and the grid is functioning without disruptions. As far as the communication is concerned, we assume that the communication links between the various actors are 100% reliable.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Evolution of system state and test signals&lt;/th>
+&lt;td colspan=1>
+&lt;p>The networked is continuously monitored by the SCADA. A voltage disruption (disturbance) is introduced at a specific node. The system (through the DSO) asks for flexibility so as to restore the voltage in a reasonable time period. The interconnection between the whole activation chain and all necessary actors is studied and assessed under an interoperability point of view.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Other parameters&lt;/th>
+&lt;td colspan=1>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Temporal resolution&lt;/th>
+&lt;td colspan=1>
+&lt;p>To be determined&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Source of uncertainty&lt;/th>
+&lt;td colspan=1>
+&lt;p>Only a deterministic type of disruption event is introduced.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Suspension criteria / Stopping criteria&lt;/th>
+&lt;td colspan=1>
+&lt;p>30 minutes or permanent loss of communication and/or grid connection&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table></description></item></channel></rss>

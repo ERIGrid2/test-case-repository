@@ -1,0 +1,357 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ERIGrid 2.0 Test Case Repository – Test Case 10</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc10/</link><description>Recent content in Test Case 10 on ERIGrid 2.0 Test Case Repository</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 17 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc10/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Test Specification 10.01</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc10/10.01/</link><pubDate>Wed, 17 Apr 2024 00:00:00 +0000</pubDate><guid>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc10/10.01/</guid><description>
+&lt;h2 id="test-specification-definition">Test Specification Definition&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+ID&lt;/th>
+&lt;td colspan=1>
+&lt;p>10.01&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Reference to Test Case&lt;/th>
+&lt;td colspan=1>
+&lt;p>TC10&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Title of Test&lt;/th>
+&lt;td colspan=1>
+&lt;p>Response of protection subsystem to various kinds of frequency disturbances&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Rationale&lt;/th>
+&lt;td colspan=1>
+&lt;p>This test is necessary in order to verify the protection relay’s capability of detecting the specified disturbances as well as to verify that the response time of the static switch in disconnecting the microgrid is below a specified threshold.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Specific Test System
+(graphical)&lt;/th>
+&lt;td colspan=1>
+&lt;p>&lt;img src="image2.png"/>&lt;/p>&lt;p>The above setup allows the evaluation of the frequency protection function with only one load in place of a detailed microgrid since frequency deviations are due to larger-scale disturbances in the transmission system.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Target measures&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Δfmax&amp;lt;±0.5Hz&lt;/li>
+&lt;li>ROCOFmax &amp;lt;1Hz/s&lt;/li>
+&lt;li>Response time (Relay and Switch) &amp;lt;0.5s&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Input and output parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>Input parameters&lt;/p>&lt;ul>
+&lt;li>Frequency&lt;/li>
+&lt;li>Load consumption&lt;/li>
+&lt;li>Relay state&lt;/li>
+&lt;/ul>&lt;p>Output parameters&lt;/p>&lt;ul>
+&lt;li>Breaker state&lt;/li>
+&lt;li>Load voltage&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Design&lt;/th>
+&lt;td colspan=1>
+&lt;p>The test is conducted into three distinct steps each of which tackles one frequency threshold (i.e., 50.5Hz, 49.5Hz, and ±1Hz/s). It is presumed that in between these steps the relay is reset to its initial state in order to allow for the detection of the next disturbance.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Initial system state&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>The source frequency is within the operating limits i.e., 49.5Hz &amp;lt; f &amp;lt; 50.5Hz, and –1Hz/s &amp;lt; ROCOF &amp;lt;+1Hz/s).&lt;/li>
+&lt;li>The breaker (static switch) is closed, and therefore the load is supplied.&lt;/li>
+&lt;li>The protection relay is reset to its normal (initial) state&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Evolution of system state and test signals&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>The LV source frequency is monitored and, controlled in order to increase stepwise to the maximum allowable value of 50.5Hz. The time of this activation limit is recorded.&lt;/li>
+&lt;li>The protection relay detects the disturbance and activates a disconnection of the static switch.&lt;/li>
+&lt;li>The static switch disconnects the load from the LV source. The load voltage is monitored in order to detect the disconnection time and calculate the response time of the system.&lt;/li>
+&lt;li>The relay is reset and the static switch reconnects the load to the source. &lt;/li>
+&lt;li>The LV source is controlled to change its frequency stepwise to 49.5Hz. The time of this activation limit is recorded.&lt;/li>
+&lt;li>The protection relay detects the disturbance and activates a disconnection of the static switch.&lt;/li>
+&lt;li>The static switch disconnects the load from the LV source. The load voltage is monitored in order to detect the disconnection time and calculate the response time of the system.&lt;/li>
+&lt;li>The relay is again reset and the static switch reconnects the load to the source. &lt;/li>
+&lt;li>The LV source is controlled to change its frequency gradually upwards or downwards with a ROCOF equal to 1Hz/s. The time of this activation limit is recorded.&lt;/li>
+&lt;li>The protection relay detects the disturbance and activates a disconnection of the static switch.&lt;/li>
+&lt;li>The static switch disconnects the load from the LV source. The load voltage is monitored in order to detect the disconnection time and calculate the response time of the system.&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Other parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>N/A&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Temporal resolution&lt;/th>
+&lt;td colspan=1>
+&lt;p>A sampling time of &amp;lt;1ms is required for the accurate measurement of the protection time response&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Source of uncertainty&lt;/th>
+&lt;td colspan=1>
+&lt;p>Uncertainties that may appear in this test are due to the precision of the various instruments used to measure the voltage/frequency responses. Additional uncertainties may be introduced by the communication channel delays between the protection relay and the static switch. &lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Suspension criteria / Stopping criteria&lt;/th>
+&lt;td colspan=1>
+&lt;p>The test should be suspended and restarted if one of the quality attributes described in the TC is not met. Also, if the frequency variations are well above the specified limits (i.e., 0.1Hz and 0.1Hz/s) the test should be discarded and repeated with the appropriate values.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table></description></item><item><title>Docs: Test Specification 10.02</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc10/10.02/</link><pubDate>Wed, 17 Apr 2024 00:00:00 +0000</pubDate><guid>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc10/10.02/</guid><description>
+&lt;h2 id="test-specification-definition">Test Specification Definition&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+ID&lt;/th>
+&lt;td colspan=1>
+&lt;p>10.02&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Reference to Test Case&lt;/th>
+&lt;td colspan=1>
+&lt;p>TC10&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Title of Test&lt;/th>
+&lt;td colspan=1>
+&lt;p>Response of protection subsystem to various kinds of voltage disturbances&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Rationale&lt;/th>
+&lt;td colspan=1>
+&lt;p>This test is an extension of TS10.01 in the sense that the protection subsystem is tested in terms of voltage limits. Due to the fact that the voltage at the PCC is determined by the local configuration of the microgrid, a detailed microgrid topology is used instead of one lumped load.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Specific Test System
+(graphical)&lt;/th>
+&lt;td colspan=1>
+&lt;p>&lt;img src="image3.png"/>&lt;/p>&lt;p>The above test system is based on the LV distribution network benchmark application example by CIGRE1&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Target measures&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>ΔVmax=+15% to -20% of nominal voltage&lt;/li>
+&lt;li>Response time (Relay and Switch) &amp;lt;0.5s&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Input and output parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>Input parameters&lt;/p>&lt;ul>
+&lt;li>Voltage at PCC&lt;/li>
+&lt;li>Power flow at PCC&lt;/li>
+&lt;li>Relay state&lt;/li>
+&lt;/ul>&lt;p>Output parameters&lt;/p>&lt;ul>
+&lt;li>Breaker state&lt;/li>
+&lt;li>Voltage at PCC&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Design&lt;/th>
+&lt;td colspan=1>
+&lt;p>The test is conducted into two distinct steps each of which tackles one voltage threshold (i.e., +15% (265V) and -20% (184V). It is presumed that in between these steps the relay is reset to its normal state in order to allow for the detection of the next disturbance.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Initial system state&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>The source and the microgrid are operated in a way that leads to a voltage at the PCC within the protection limits i.e., 184V&amp;lt; Vpcc &amp;lt; 265V.&lt;/li>
+&lt;li>The breaker (static switch) is closed, therefore the microgrid exchanges power with the grid (voltage source).&lt;/li>
+&lt;li>The protection relay is reset to its normal state&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Evolution of system state and test signals&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>At first the voltage at the PCC should be within the protection limits and the microgrid should be connected to the grid (LV source) and exchange power.&lt;/li>
+&lt;li>Either the LV source or some of the microgrid units should be controlled in a way that allows the voltage at the PCC to increase towards the upper limit (15%). The time that the voltage crosses the limit is recorded.&lt;/li>
+&lt;li>The protection relay detects the disturbance and activates a disconnection of the static switch.&lt;/li>
+&lt;li>The static switch disconnects the microgrid from the LV source. The PCC voltage is monitored in order to detect the disconnection time and calculate the response time of the protection system.&lt;/li>
+&lt;li>The relay is reset and the static switch reconnects the microgrid to the source. &lt;/li>
+&lt;li>Either the LV source or some of the microgrid units should be controlled in a way that allows the voltage at the PCC to decrease towards the lower limit (-20%). The time that the voltage crosses the limit is recorded.&lt;/li>
+&lt;li>The protection relay detects the disturbance and activates a disconnection of the static switch.&lt;/li>
+&lt;li>The static switch disconnects the load from the LV source. The PCC voltage is monitored in order to detect the disconnection time and calculate the response time of the system.&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Other parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>N/A&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Temporal resolution&lt;/th>
+&lt;td colspan=1>
+&lt;p>A sampling time of &amp;lt;1ms is required for the accurate measurement of the protection time response&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Source of uncertainty&lt;/th>
+&lt;td colspan=1>
+&lt;p>Uncertainties may arise due to the precision of the various instruments used to measure the voltage responses. Additional uncertainties may be introduced by the communication channel delays between the protection relay and the static switch, as well as from the operation of the microgrid units that are subject to: &lt;/p>&lt;ul>
+&lt;li>Environmental conditions&lt;/li>
+&lt;li>Consumers’ demand&lt;/li>
+&lt;li>Grid parameters variability i.e., resistance/inductance ratio&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Suspension criteria / Stopping criteria&lt;/th>
+&lt;td colspan=1>
+&lt;p>The test should be suspended and restarted if one of the quality attributes described in the TC is not met.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table></description></item><item><title>Docs: Test Specification 10.03</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc10/10.03/</link><pubDate>Wed, 17 Apr 2024 00:00:00 +0000</pubDate><guid>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc10/10.03/</guid><description>
+&lt;h2 id="test-specification-definition">Test Specification Definition&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+ID&lt;/th>
+&lt;td colspan=1>
+&lt;p>10.03&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Reference to Test Case&lt;/th>
+&lt;td colspan=1>
+&lt;p>TC10&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Title of Test&lt;/th>
+&lt;td colspan=1>
+&lt;p>Primary frequency and voltage response after disconnection&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Rationale&lt;/th>
+&lt;td colspan=1>
+&lt;p>Once the protection system intervenes to isolate the microgrid, the local DER controllers (voltage and frequency droop) react to the imbalance and try to stabilize the microgrid operation. The specific test aims at characterizing the simultaneous ability of the DER units (i.e., battery storage and CHP) to stabilize the voltage and frequency. &lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Specific Test System
+(graphical)&lt;/th>
+&lt;td colspan=1>
+&lt;p>&lt;img src="image4.png"/>&lt;/p>&lt;p>In this TS the selected test system is the same with TS10.02 and is based on the LV distribution network benchmark application example by CIGRE1&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Target measures&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>ΔVmax=+15% to -20% of nominal voltage&lt;/li>
+&lt;li>Δfmax&amp;lt;±1Hz&lt;/li>
+&lt;li>ROCOFmax &amp;lt;2Hz/s&lt;/li>
+&lt;li>Response time (frequency/voltage stabilization) &amp;lt;5s&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Input and output parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>Input parameters&lt;/p>&lt;ul>
+&lt;li>Solar irradiance&lt;/li>
+&lt;li>Wind speed&lt;/li>
+&lt;li>Ambient temperature&lt;/li>
+&lt;li>Load consumption&lt;/li>
+&lt;li>Breaker state&lt;/li>
+&lt;/ul>&lt;p>Output parameters&lt;/p>&lt;ul>
+&lt;li>Frequency&lt;/li>
+&lt;li>Voltages&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Design&lt;/th>
+&lt;td colspan=1>
+&lt;p>The test considers one power imbalance that is caused from the disconnection of the breaker and the loss of power exchange to/from the grid. This imbalance will result in activation of the droop controllers and the possible subsequent stabilization. The same test will have to be repeated several times for five (5) different initial conditions depending on the type of disturbance. &lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Initial system state&lt;/th>
+&lt;td colspan=1>
+&lt;p>There are five possible initial states for the system in terms of frequency and voltage values. All five of them, however, require that initially the microgrid is connected to the grid and that both the voltage at PCC and the frequency are within allowable limits. Once these conditions are met, each one of the five disturbances should be generated through the LV source.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Evolution of system state and test signals&lt;/th>
+&lt;td colspan=1>
+&lt;ol>
+&lt;li>The microgrid is running in parallel with the LV source with which exchanges some power&lt;/li>
+&lt;li>The LV source frequency is monitored and controlled in order to increase stepwise to the maximum allowable value of 50.5Hz. The time of this activation limit is recorded&lt;/li>
+&lt;li>The protection relay detects the disturbance and activates a disconnection of the static switch&lt;/li>
+&lt;li>The static switch disconnects the microgrid from the LV source&lt;/li>
+&lt;li>The frequency at the PCC and the Voltage at multiple points of the microgrid are monitored in order to estimate the response time from the protection activation to the new steady-state&lt;/li>
+&lt;li>The relay is reset and the static switch reconnects the load to the source &lt;/li>
+&lt;li>Step 2 is repeated with the frequency setting at 49.5Hz&lt;/li>
+&lt;li>Steps 3-6 are repeated&lt;/li>
+&lt;li>Step 2 is repeated with the frequency setting at ROCOF=1Hz/s&lt;/li>
+&lt;li>Steps 3-6 are repeated&lt;/li>
+&lt;li>Either the LV source or some of the microgrids units should be controlled in a way that allows the voltage at the PCC to increase towards the upper limit (15%). The time that the voltage crosses the limit is recorded.&lt;/li>
+&lt;li>The protection relay detects the disturbance and activates a disconnection of the static switch&lt;/li>
+&lt;li>The static switch disconnects the microgrid from the LV source&lt;/li>
+&lt;li>Frequency at the PCC and Voltage at multiple points of the microgrid are monitored in order to estimate the response time from the protection activation to the new steady-state&lt;/li>
+&lt;li>The relay is reset and the static switch reconnects the microgrid to the source &lt;/li>
+&lt;li>Either the LV source or some of the microgrids units should be controlled in a way that allows the voltage at the PCC to increase towards the lower limit (-20%). The time that the voltage crosses the limit is recorded.&lt;/li>
+&lt;li>The protection relay detects the disturbance and activates a disconnection of the static switch&lt;/li>
+&lt;li>The static switch disconnects the microgrid from the LV source &lt;/li>
+&lt;li>Frequency at the PCC and Voltage at multiple points of the microgrid are monitored in order to estimate the response time from the protection activation to the new steady-state&lt;/li>
+&lt;/ol>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Other parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>N/A&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Temporal resolution&lt;/th>
+&lt;td colspan=1>
+&lt;p>A sampling time of &amp;lt;1ms is required for the accurate measurement of the total system response&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Source of uncertainty&lt;/th>
+&lt;td colspan=1>
+&lt;p>Uncertainties that may arise due to the precision of the various instruments used to measure the voltage responses. Additional uncertainties may be introduced by the communication channel delays between the protection relay and the static switch, as well as from the operation of the microgrid units that are subject to: &lt;/p>&lt;ul>
+&lt;li>Environmental conditions&lt;/li>
+&lt;li>Consumers’ demand&lt;/li>
+&lt;li>Grid parameters variability i.e., resistance/inductance ratio&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Suspension criteria / Stopping criteria&lt;/th>
+&lt;td colspan=1>
+&lt;p>The test should be suspended and restarted if one of the quality attributes described in the TC is not met.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table></description></item></channel></rss>

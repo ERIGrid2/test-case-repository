@@ -1,0 +1,109 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ERIGrid 2.0 Test Case Repository – Test Case 22</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc22/</link><description>Recent content in Test Case 22 on ERIGrid 2.0 Test Case Repository</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 17 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc22/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Test Specification TC22.TS1</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc22/tc22.ts1/</link><pubDate>Wed, 17 Apr 2024 00:00:00 +0000</pubDate><guid>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc22/tc22.ts1/</guid><description>
+&lt;h2 id="test-specification-definition">Test Specification Definition&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+ID&lt;/th>
+&lt;td colspan=1>
+&lt;p>TC22.TS1&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Reference to Test Case&lt;/th>
+&lt;td colspan=1>
+&lt;p>TC22&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Title of Test&lt;/th>
+&lt;td colspan=1>
+&lt;p>Determination of maximum tripping times in the presence of ICT disturbances within a digital substation&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Rationale&lt;/th>
+&lt;td colspan=1>
+&lt;p>The IEC 61850 standard recommends a maximum time for transmission of fast messages such as trip signals to be within 10ms. Hence, this experiment seeks to test this performance requirement under adverse communication related conditions such as packet losses, latency, etc.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Specific Test System
+(graphical)&lt;/th>
+&lt;td colspan=1>
+&lt;p>The test system comprises of a real-time grid simulator, at least one Ethernet switch, and multiple IEC 61850 devices interconnected in a HIL setup. See SuT for further information.&lt;/p>&lt;p>&lt;img src="image2.png"/>&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Target measures&lt;/th>
+&lt;td colspan=1>
+&lt;p>The maximum time taken to communicate trip signals when subjected to specific communication disturbances.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Input and output parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>Input parameters: &lt;/p>&lt;ul>
+&lt;li>Type of power system simulated&lt;/li>
+&lt;li>Network topology of substation&lt;/li>
+&lt;li>Protection schemes applied through the relays&lt;/li>
+&lt;li>Fault type and duration&lt;/li>
+&lt;li>Type of disturbance: equipment failure, increased latency, bad actor, misconfiguration etc.&lt;/li>
+&lt;/ul>&lt;p>Output parameters:&lt;/p>&lt;ul>
+&lt;li>Maximum time taken to communicate trip signals&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Design&lt;/th>
+&lt;td colspan=1>
+&lt;p>The test is a HIL experiment as described in the SuT and specific test system. The test design is as follows: &lt;/p>&lt;ol>
+&lt;li>Start the system with all devices functioning as required.&lt;/li>
+&lt;li>Run a test simulation with a short-circuit condition&lt;/li>
+&lt;li>Note that appropriate relay communicates trip signal via IEC 61850 GOOSE message&lt;/li>
+&lt;li>Circuit breaker is opened, and the fault is cleared&lt;/li>
+&lt;li>Note this tripping time as T1&lt;/li>
+&lt;li>Apply a specific type of communication disturbance, for e.g., increased network traffic via an external device or network emulator.&lt;/li>
+&lt;li>Repeat steps 2 to 4 and note the new tripping time T2.&lt;/li>
+&lt;li>Repeat steps 6 and 7 in case of equipment failures, misconfigurations, and note times as T3, T4, and so on.&lt;/li>
+&lt;/ol>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Initial system state&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>All devices are ON and running&lt;/li>
+&lt;li>Real-time grid simulator can send and receive messages to and from the hardware devices&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Evolution of system state and test signals&lt;/th>
+&lt;td colspan=1>
+&lt;p>Successful recording of parameters T1, T2…Tn for various types of ICT disturbances&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Other parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>N/A&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Temporal resolution&lt;/th>
+&lt;td colspan=1>
+&lt;p>Tens of milliseconds&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Source of uncertainty&lt;/th>
+&lt;td colspan=1>
+&lt;p>Configuration of ethernet switch, IEC 61850 device compatibility&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Suspension criteria / Stopping criteria&lt;/th>
+&lt;td colspan=1>
+&lt;p>Suspension criteria: Errors in devices/misconfiguration&lt;/p>&lt;p>Stopping criteria: the experiment can be concluded when the maximum tripping times for various combinations of ICT disturbances and fault types are noted. Alternatively, if this time ever exceeds 10ms, the experiment can be stopped. &lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table></description></item></channel></rss>

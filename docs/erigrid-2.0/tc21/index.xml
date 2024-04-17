@@ -1,0 +1,234 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ERIGrid 2.0 Test Case Repository – Test Case 21</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc21/</link><description>Recent content in Test Case 21 on ERIGrid 2.0 Test Case Repository</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 17 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc21/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Test Specification NA4-TC21.TS2</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc21/na4-tc21.ts2/</link><pubDate>Wed, 17 Apr 2024 00:00:00 +0000</pubDate><guid>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc21/na4-tc21.ts2/</guid><description>
+&lt;h2 id="test-specification-definition">Test Specification Definition&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+ID&lt;/th>
+&lt;td colspan=1>
+&lt;p>NA4-TC21.TS2&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Reference to Test Case&lt;/th>
+&lt;td colspan=1>
+&lt;p>TS02&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Title of Test&lt;/th>
+&lt;td colspan=1>
+&lt;p>This test allows determining and verifying the successful transmission rate of a data profile for different delay emulations enabled by the communication emulator. This would allow to verify the minimum periodicity of data value sent determined in TS1 (with 99% successful transmission rate), and determine if the successfully transmitted data is similar or decreases when including emulated delays. &lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Rationale&lt;/th>
+&lt;td colspan=1>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Specific Test System
+(graphical)&lt;/th>
+&lt;td colspan=1>
+&lt;p>&lt;img src="image5.png"/>&lt;/p>&lt;p>The test system is comprised of the components and their interconnection according to the figure shown above.&lt;/p>&lt;p>The emulation delay must be set to different values depending on the delay to be assessed. One experiment must be carried out for each of these delays&lt;/p>&lt;p>The real time simulator must send a data profile composed of integer values using “protocol 1” and a value α equal to 1. The values have to constantly increase throughout each experiment.&lt;/p>&lt;p>&lt;img src="image6.png"/>&lt;/p>&lt;p>Additionally, the real time simulator must internally register a timestamp for each value sent and a timestamp for when this value is received (if the value is not lost).&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Target measures&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>The roundtrip time that takes each value sent from the real time simulator to reach the real time simulator, going through the communication devices and the communication emulator.&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Input and output parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>Controllable input parameters:&lt;/p>&lt;ul>
+&lt;li>The time duration for which each value from the data profile is sent (Ideally, the minimum duration determined in TS1).&lt;/li>
+&lt;li>The specific communication protocol to send the information (Protocol 1 and 2).&lt;/li>
+&lt;li>The emulation delay of the communication emulator.&lt;/li>
+&lt;/ul>&lt;p>Uncontrollable parameters:&lt;/p>&lt;ul>
+&lt;li>Time that takes the data to be received by the real time simulator&lt;/li>
+&lt;/ul>&lt;p>Measured parameters:&lt;/p>&lt;ul>
+&lt;li>Values received by the real time simulator&lt;/li>
+&lt;li>Roundtrip time of each value received by the real time simulator.&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Design&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Choose data profile to be sent around the system.&lt;/li>
+&lt;li>Choose the number of values that will be sent through the system (at least 1000 recommended for statistical purposes)&lt;/li>
+&lt;li>Choose communication protocols “Protocol 1” and “Protocol 2”&lt;/li>
+&lt;li>Select a set of delay emulation values to be assessed (e.g. {100ms, 150ms, 200ms})&lt;/li>
+&lt;li>Set the delay emulation from the communication emulator to the first value from the set&lt;/li>
+&lt;li>Run the experiment and determine for each sent value whether the real time simulator received it.&lt;/li>
+&lt;li>If the value was received, determine the roundtrip time by calculating the difference of the timestamps registered by the real time simulator.&lt;/li>
+&lt;li>Assess test criteria for each of the values.&lt;/li>
+&lt;li>Repeat procedure selecting a different delay emulation value from the set, until all the experiments have been executed.&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Initial system state&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Devices are on and running&lt;/li>
+&lt;li>The real time simulator has sent any value &lt;/li>
+&lt;li>The registrations (in the real time simulator) of successful received values and the timestamps of sending/receiving values are empty &lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Evolution of system state and test signals&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>The successful received values and the timestamps of sending/receiving values are registered in the real time simulator.&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Other parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>N/A&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Temporal resolution&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Polling frequency parameters of the protocols being used should be less than the value that has the minimum transmission duration. Polling frequency in the range 1ms-10ms is recommended.&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Source of uncertainty&lt;/th>
+&lt;td colspan=1>
+&lt;p>The delay that can occur within any of the devices used in the system has a stochastic nature. These are therefore sources of uncertainty.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Suspension criteria / Stopping criteria&lt;/th>
+&lt;td colspan=1>
+&lt;p>Suspension criteria: Errors in devices&lt;/p>&lt;p>Stopping criteria: the experiment concludes when the value from the data profile reaches the previously defined number.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table></description></item><item><title>Docs: Test Specification TC21.TS1</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc21/tc21.ts1/</link><pubDate>Wed, 17 Apr 2024 00:00:00 +0000</pubDate><guid>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc21/tc21.ts1/</guid><description>
+&lt;h2 id="test-specification-definition">Test Specification Definition&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+ID&lt;/th>
+&lt;td colspan=1>
+&lt;p>TC21.TS1&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Reference to Test Case&lt;/th>
+&lt;td colspan=1>
+&lt;p>TC21&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Title of Test&lt;/th>
+&lt;td colspan=1>
+&lt;p>Determining minimum periodicity of data transmission for a successful transmission rate over 99%&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Rationale&lt;/th>
+&lt;td colspan=1>
+&lt;p>This test allows determining, as a first step, which is the minimum periodicity for which data sent from the real time simulator will result in a packet loss rate less than 1%. This information is needed for the design of the experiment needed to run TS02.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Specific Test System
+(graphical)&lt;/th>
+&lt;td colspan=1>
+&lt;p>&lt;img src="image5.png"/>&lt;/p>&lt;p>The test system is comprised by the components and their interconnection according to the figure shown above.&lt;/p>&lt;p>The real time simulator must send a data profile composed of integer values using “protocol 1” and a value α less than 1.&lt;/p>&lt;p>&lt;img src="image1.png"/>&lt;/p>&lt;p>Additionally, the real time simulator must internally register a timestamp for each value sent and a timestamp for when this value is received (if the value is not lost).&lt;/p>&lt;p>The communication emulator delay setting must be “0”. This will allow determining the minimum duration a value has to be sent for a 100% successful transmission rate. &lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Target measures&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>The roundtrip time for each value sent from the real time simulator to reach the real time simulator, going through the communication devices and the communication emulator.&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Input and output parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>Controllable input parameters:&lt;/p>&lt;ul>
+&lt;li>Number of numbers that will be used for the data profile (e.g. 30).&lt;/li>
+&lt;li>The proportion for which the next sending duration of the next value will be decreased (factor α).&lt;/li>
+&lt;li>The specific communication protocol to send the information (Protocol 1 and 2).&lt;/li>
+&lt;li>The number of times the data profile will be sent around the system to obtain statistically valid results (e.g. 1000 times)&lt;/li>
+&lt;/ul>&lt;p>Uncontrollable parameters:&lt;/p>&lt;ul>
+&lt;li>Time that it takes the data to be received by the real time simulator&lt;/li>
+&lt;/ul>&lt;p>Measured parameters:&lt;/p>&lt;ul>
+&lt;li>Values received by the real time simulator&lt;/li>
+&lt;li>Roundtrip time of each value received by the real time simulator.&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Design&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Choose data profile to be sent around the system.&lt;/li>
+&lt;li>Choose the number of times the data profile will be sent around the system.&lt;/li>
+&lt;li>Choose communication protocols “Protocol 1” and “Protocol 2”&lt;/li>
+&lt;li>Set the delay emulation from the communication emulator to “0”&lt;/li>
+&lt;li>Run the experiment and determine for each sent value whether the real time simulator received it.&lt;/li>
+&lt;li>If the value was received, determine the roundtrip time by calculating the difference of the timestamps registered by the real time simulator.&lt;/li>
+&lt;li>Assess test criteria for each of the values.&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Initial system state&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Devices are on and running&lt;/li>
+&lt;li>The real time simulator has sent any value &lt;/li>
+&lt;li>The registrations (in the real time simulator) of successful received values and the timestamps of sending/receiving values are empty &lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Evolution of system state and test signals&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>The successful received values and the timestamps of sending/receiving values are registered in the real time simulator.&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Other parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>N/A&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Temporal resolution&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Polling frequency parameters of the protocols being used should be less than the value that has the minimum transmission duration. Polling frequency in the range 1ms-10ms is recommended.&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Source of uncertainty&lt;/th>
+&lt;td colspan=1>
+&lt;p>The delay that can occur within any of the devices used in the system has a stochastic nature. These are therefore sources of uncertainty.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Suspension criteria / Stopping criteria&lt;/th>
+&lt;td colspan=1>
+&lt;p>Suspension criteria: Errors in devices&lt;/p>&lt;p>Stopping criteria: the experiment concludes when the data profile has been sent a previously defined number of times.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table></description></item></channel></rss>

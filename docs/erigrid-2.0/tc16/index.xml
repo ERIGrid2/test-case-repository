@@ -1,0 +1,339 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ERIGrid 2.0 Test Case Repository – Test Case 16</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc16/</link><description>Recent content in Test Case 16 on ERIGrid 2.0 Test Case Repository</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 17 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc16/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Test Specification 16.01</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc16/16.01/</link><pubDate>Wed, 17 Apr 2024 00:00:00 +0000</pubDate><guid>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc16/16.01/</guid><description>
+&lt;h2 id="test-specification-definition">Test Specification Definition&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+ID&lt;/th>
+&lt;td colspan=1>
+&lt;p>16.01&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Reference to Test Case&lt;/th>
+&lt;td colspan=1>
+&lt;p>TC16&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Title of Test&lt;/th>
+&lt;td colspan=1>
+&lt;p>Black Start algorithm verification&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Rationale&lt;/th>
+&lt;td colspan=1>
+&lt;p>This test verifies the ability of the centralized BS controller to disconnect/reconnect parts of the grid and resources in the right order and at the right timing. The order of actions is fixed and predefined through the programming parameters of the control system, whereas the reconnection timing should happen automatically at times when voltage and frequency are within specific boundaries.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Specific Test System
+(graphical)&lt;/th>
+&lt;td colspan=1>
+&lt;p>&lt;img src="image2.png"/>&lt;/p>&lt;p>The test setup depicted above comprises one BS controller (as part of the DMS), three loads with controllable switches, three transducers for the voltage measurement at each load (on the breaker’s side), one transducer for the measurement of frequency and one controllable source which provides the voltage/frequency controllability required for validating the controller behavior. &lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Target measures&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Power outage time &lt;/li>
+&lt;li>Reconnection times&lt;/li>
+&lt;li>Voltage/frequency values&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Input and output parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>Input parameters&lt;/p>&lt;ul>
+&lt;li>Frequency&lt;/li>
+&lt;li>Voltage&lt;/li>
+&lt;/ul>&lt;p>Output parameters&lt;/p>&lt;ul>
+&lt;li>Breaker state&lt;/li>
+&lt;li>Load voltage&lt;/li>
+&lt;li>Controllable source activation&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Design&lt;/th>
+&lt;td colspan=1>
+&lt;p>The specific test makes use of the controllable MV source to emulate the blackout condition as well as the BS generation provider. Therefore, the source’s output can be deactivated manually and reactivated through a communication signal from the BS controller. In the real system, the specific signal is the start-up command from the BS controller to the BS generator. The voltages at each load should be monitored on either end of the breaker in order to verify:&lt;/p>&lt;ul>
+&lt;li>Disconnection/reconnection time&lt;/li>
+&lt;li>If the voltage conditions for reconnection are suitable&lt;/li>
+&lt;/ul>&lt;p>Moreover, by monitoring the frequency at the source’s output it is possible to:&lt;/p>&lt;ul>
+&lt;li>Verify that the controller reconnects the loads within the proper frequency conditions and in the right order&lt;/li>
+&lt;li>Verify that the start-up command to the BS generator is communicated correctly and in the right order &lt;/li>
+&lt;/ul>&lt;p>Even though some voltage/frequency stability is presumed for the test, the limits for these values, especially frequency should be not considered as tight as in normal operation. Therefore, the frequency limits for this test are considered from 47.5 to 52 Hz with a ROCOF &amp;lt;2 Hz/s. The corresponding voltage limits are considered as +5% and -5% of the nominal voltage.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Initial system state&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>The controllable source supplies the system with constant voltage at frequency at nominal values (fsource=50 Hz, Vsource=1 p.u.)&lt;/li>
+&lt;li>The three breakers are closed, and the loads are supplied&lt;/li>
+&lt;li>The BS controller is reset to its initial state (normal operation) &lt;/li>
+&lt;li>The BS controller continuously monitors frequency and voltages in order to detect a possible blackout&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Evolution of system state and test signals&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>At a predetermined moment, the source’s output is deactivated and the voltage and frequency become zero emulating the blackout conditions &lt;/li>
+&lt;li>This time is recorded as reference for calculating the response times of the various components&lt;/li>
+&lt;li>The BS controller detects the loss of voltage and initiates the BS procedure&lt;/li>
+&lt;li>Initially, the BS controller disconnects all three loads from the grid&lt;/li>
+&lt;li>After a specific interval (&amp;lt;1 min), the BS controller dispatches the start-up signal to the controllable source&lt;/li>
+&lt;li>The output of the source is monitored in order to calculate the time required for this step until re-energization is restored&lt;/li>
+&lt;li>The BS controller continuously monitors the voltages and frequency in order to detect when the conditions are proper for reconnecting the loads&lt;/li>
+&lt;li>The load voltages are recorded to measure the reconnection order as well as the proper voltage/frequency conditions during reconnection&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Other parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>N/A&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Temporal resolution&lt;/th>
+&lt;td colspan=1>
+&lt;p>A sampling time of &amp;lt;1 s is enough for this test to provide the necessary information since the responses of the controller signals range in the order of several seconds to minutes.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Source of uncertainty&lt;/th>
+&lt;td colspan=1>
+&lt;p>Uncertainties that may appear in this test are due to the precision of the various instruments used to measure the voltage/frequency responses. Additional uncertainties may be introduced by the communication channel delays between the BS controller and the various controllable components.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Suspension criteria / Stopping criteria&lt;/th>
+&lt;td colspan=1>
+&lt;p>The test should be suspended and restarted if one of the quality attributes described in the TC is not met or if the algorithmic procedure of the BS controller does not perform as should be expected.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table></description></item><item><title>Docs: Test Specification 16.02</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc16/16.02/</link><pubDate>Wed, 17 Apr 2024 00:00:00 +0000</pubDate><guid>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc16/16.02/</guid><description>
+&lt;h2 id="test-specification-definition">Test Specification Definition&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+ID&lt;/th>
+&lt;td colspan=1>
+&lt;p>16.02&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Reference to Test Case&lt;/th>
+&lt;td colspan=1>
+&lt;p>TC16&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Title of Test&lt;/th>
+&lt;td colspan=1>
+&lt;p>Frequency and Voltage stability response during BS&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Rationale&lt;/th>
+&lt;td colspan=1>
+&lt;p>Once the BS generator is started by the BS controller to reenergize the grid, an interval follows within which several resources are reconnected. The main challenge that the BS generator and the system itself faces is the stability of frequency and voltage. Due to its nature, the requirements for this operating state should not be very strict. Nevertheless, rudimentary stability should always be maintained in order to avoid a new blackout. This test aims at evaluating the system’s capability to cope with the imbalances and maintain frequency as well as voltage stability within the required limits.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Specific Test System
+(graphical)&lt;/th>
+&lt;td colspan=1>
+&lt;p>&lt;img src="image3.png"/>&lt;/p>&lt;p>The above test system is based on the MV distribution network benchmark application example by CIGRE1&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Target measures&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>ΔVmax=+5% to -5% of nominal voltage&lt;/li>
+&lt;li>Δfmax= from 47.5 to 52 Hz with a ROCOF &amp;lt;2 Hz/s.&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Input and output parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>Input parameters&lt;/p>&lt;ul>
+&lt;li>Solar irradiance&lt;/li>
+&lt;li>Wind speed&lt;/li>
+&lt;li>Ambient temperature&lt;/li>
+&lt;li>Load consumption&lt;/li>
+&lt;li>Breaker state&lt;/li>
+&lt;/ul>&lt;p>Output parameters&lt;/p>&lt;ul>
+&lt;li>Frequency&lt;/li>
+&lt;li>Voltages&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Design&lt;/th>
+&lt;td colspan=1>
+&lt;p>The test is carried out in a way that emulates the system behaviour after a black out. This implies the initial disconnection of lines and loads through the controllable circuit breakers and the start-up of the BS generator (BESS on Bus B-5). In this way, the system is sectionalized to its minimal connectivity state.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Initial system state&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>All circuit breakers are open&lt;/li>
+&lt;li>The BS generator is not running&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Evolution of system state and test signals&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>At a specific time within 1 min from the beginning of the test, the BS generator is started up&lt;/li>
+&lt;li>Frequency and voltages at various points of the grid are continuously monitored&lt;/li>
+&lt;li>After another time interval (e.g., 2-5 minutes) the first set of circuit breakers is reclosed to add the extra generation/load to the system. The time interval allowed for reconnection should be enough for quasi-stabilization of the system.&lt;/li>
+&lt;li>The previous step is repeated as many times as the number of circuit breaker groups are reclosed&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Other parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>N/A&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Temporal resolution&lt;/th>
+&lt;td colspan=1>
+&lt;p>A sampling time of &amp;lt;100 ms is required for the accurate measurement of frequency and voltage variations.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Source of uncertainty&lt;/th>
+&lt;td colspan=1>
+&lt;p>Apart from the measurement uncertainties due to the instruments’ accuracy, additional uncertainties may be introduced by the communication channel delays between the controller and the DER units. In addition to that, the system operation is subject to uncertainties due to: &lt;/p>&lt;ul>
+&lt;li>Environmental conditions&lt;/li>
+&lt;li>Consumers’ demand&lt;/li>
+&lt;li>Grid parameters variability, i.e., resistance and inductance&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Suspension criteria / Stopping criteria&lt;/th>
+&lt;td colspan=1>
+&lt;p>The test should be suspended and restarted if one of the quality attributes described in the TC is not met. If stability is not ensured during the various reconnection actions, the control parameters should be readjusted and the test repeated.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table></description></item><item><title>Docs: Test Specification 16.03</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc16/16.03/</link><pubDate>Wed, 17 Apr 2024 00:00:00 +0000</pubDate><guid>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc16/16.03/</guid><description>
+&lt;h2 id="test-specification-definition">Test Specification Definition&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+ID&lt;/th>
+&lt;td colspan=1>
+&lt;p>16.03&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Reference to Test Case&lt;/th>
+&lt;td colspan=1>
+&lt;p>TC16&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Title of Test&lt;/th>
+&lt;td colspan=1>
+&lt;p>BS generator energy availability test&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Rationale&lt;/th>
+&lt;td colspan=1>
+&lt;p>The BS generator must provide a sufficient amount of energy for at least 1 hour, in order for the system to cope with any uncertainties during the process. Such uncertainties may include failures in starting up other generators or instability problems. Also, uncertainties caused State of Health (SOH), ambient temperature, etc. may result in a deviation of the actual available energy of the BESS from its nominal value. The specific test addresses the ability of the BS generator to provide energy supply for at least 1 hour of continuous operation after the BS.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Specific Test System
+(graphical)&lt;/th>
+&lt;td colspan=1>
+&lt;p>&lt;img src="image4.png"/>&lt;/p>&lt;p>The test system consists of a controllable and bidirectional MV source, one BESS comprising battery, inverter and BMS and one controller which can control the BESS’s active and reactive power injection.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Target measures&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Battery SOC&amp;gt;10%&lt;/li>
+&lt;li>Operation time &amp;gt;1 h&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Input and output parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>Input parameters&lt;/p>&lt;ul>
+&lt;li>Ambient temperature&lt;/li>
+&lt;li>Active and reactive power setpoints&lt;/li>
+&lt;/ul>&lt;p>Output parameters&lt;/p>&lt;ul>
+&lt;li>Active and Reactive Power&lt;/li>
+&lt;li>Active and Reactive Energy&lt;/li>
+&lt;li>SOC&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Design&lt;/th>
+&lt;td colspan=1>
+&lt;p>The test can consider various profiles for the setpoints of P and Q depending on the specifications and needs from each BS system. However, as the worst-case scenario, the maximum P should continuously be drawn from the BESS in order to examine the minimum time duration of the generator’s availability.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Initial system state&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>The battery is charged at a SOC&amp;gt;50% assuming that the system may participate in other services as well&lt;/li>
+&lt;li>The MV source is up and running at nominal voltage&lt;/li>
+&lt;li>The Inverter is connected to the MV source&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Evolution of system state and test signals&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>The PQ controller changes the setpoint for the active power to its maximum value.&lt;/li>
+&lt;li>The power flow is recorded at the bus together with the time that the flow of energy starts&lt;/li>
+&lt;li>In parallel, the SOC and battery voltage are monitored through the BMS&lt;/li>
+&lt;li>The discharging of the BESS continues until either 1-hour elapses or the SoC drops below 10%&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Other parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>N/A&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Temporal resolution&lt;/th>
+&lt;td colspan=1>
+&lt;p>A sampling time of 1 s is sufficient for monitoring the required quantities&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Source of uncertainty&lt;/th>
+&lt;td colspan=1>
+&lt;p>Sources of uncertainty for this experiment may be the SoH of the battery, the ambient temperature as well as the accuracy with which the BMS calculates the SOC. In addition, accuracies of measurement equipment may apply.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Suspension criteria / Stopping criteria&lt;/th>
+&lt;td colspan=1>
+&lt;p>The test should be suspended if no maximum power absorption is obtained from the BESS. Also, if for some reason the BMS overrides the external control in order to prioritize other functions (e.g., recharge of the battery).&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table></description></item></channel></rss>

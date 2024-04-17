@@ -1,0 +1,106 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ERIGrid 2.0 Test Case Repository – Test Case 4</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc04/</link><description>Recent content in Test Case 4 on ERIGrid 2.0 Test Case Repository</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 17 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc04/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Test Specification 4.01</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc04/4.01/</link><pubDate>Wed, 17 Apr 2024 00:00:00 +0000</pubDate><guid>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc04/4.01/</guid><description>
+&lt;h2 id="test-specification-definition">Test Specification Definition&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+ID&lt;/th>
+&lt;td colspan=1>
+&lt;p>4.01&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Reference to Test Case&lt;/th>
+&lt;td colspan=1>
+&lt;p>TC4&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Title of Test&lt;/th>
+&lt;td colspan=1>
+&lt;p>Performance of different voltage control techniques for inverter-interfaced DERs in microgrids&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Rationale&lt;/th>
+&lt;td colspan=1>
+&lt;p>This test will perform a comparison between different voltage control schemes that are widely used in inverter-based microgrids, i.e., master-slave control, conventional droop control and inverse droop control. Aiming to quantify the effectiveness of the aforementioned techniques, their pros &amp;amp; cons will be ultimately identified.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Specific Test System
+(graphical)&lt;/th>
+&lt;td colspan=1>
+&lt;p>Laboratory setup&lt;/p>&lt;p>&lt;img src="image1.png"/>&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Target measures&lt;/th>
+&lt;td colspan=1>
+&lt;p>Microgrid voltages&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Input and output parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>Input:&lt;/p>&lt;ul>
+&lt;li>Level of unbalance of the load&lt;/li>
+&lt;li>Inverter power injection set-points and limits&lt;/li>
+&lt;li>DERs control parameters&lt;/li>
+&lt;li>Microgrid characteristics&lt;/li>
+&lt;/ul>&lt;p>Output:&lt;/p>&lt;ul>
+&lt;li>Microgrid voltages&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Design&lt;/th>
+&lt;td colspan=1>
+&lt;ol>
+&lt;li>Operate multiple inverters in parallel&lt;/li>
+&lt;li>Perform load changes and observe voltage regulation (continuity of service)&lt;/li>
+&lt;li>Save the experimental results&lt;/li>
+&lt;/ol>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Initial system state&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Inverter controllers enabled&lt;/li>
+&lt;li>Load disconnected&lt;/li>
+&lt;li>Grid voltages based on the nominal output values of the inverters&lt;/li>
+&lt;li>Hardware or simulated network and devices up and running&lt;/li>
+&lt;li>Power analyzer and computers displaying and saving data&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Evolution of system state and test signals&lt;/th>
+&lt;td colspan=1>
+&lt;p>The microgrid system is subjected to load variations (step changes)&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Other parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>N/A&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Temporal resolution&lt;/th>
+&lt;td colspan=1>
+&lt;p>At least 0.1 ms.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Source of uncertainty&lt;/th>
+&lt;td colspan=1>
+&lt;p>Impedance of load and lines, inverter sensors operation&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Suspension criteria / Stopping criteria&lt;/th>
+&lt;td colspan=1>
+&lt;p>Abnormal current/ power injections from inverters or tripping of inverters&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table></description></item></channel></rss>

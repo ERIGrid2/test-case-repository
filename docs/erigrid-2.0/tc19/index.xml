@@ -1,0 +1,196 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ERIGrid 2.0 Test Case Repository – Test Case 19</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc19/</link><description>Recent content in Test Case 19 on ERIGrid 2.0 Test Case Repository</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 17 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc19/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Test Specification 19.01</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc19/19.01/</link><pubDate>Wed, 17 Apr 2024 00:00:00 +0000</pubDate><guid>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc19/19.01/</guid><description>
+&lt;h2 id="test-specification-definition">Test Specification Definition&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+ID&lt;/th>
+&lt;td colspan=1>
+&lt;p>19.01&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Reference to Test Case&lt;/th>
+&lt;td colspan=1>
+&lt;p>19 Evaluation of unintended impacts of activation of flexibility resources on the quality of supply&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Title of Test&lt;/th>
+&lt;td colspan=1>
+&lt;p>Evaluation of unintended impacts of large amount of EVs under same distribution feeder participating on frequency regulation (FCR-n market in Finland)&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Rationale&lt;/th>
+&lt;td colspan=1>
+&lt;p>Aim is to find out if activation of large amount of flexibility from electric vehicles in a local area could cause unintended impacts on the quality of supply.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Specific Test System
+(graphical)&lt;/th>
+&lt;td colspan=1>
+&lt;p>The test system consists of a large distribution network, which includes customer loads, e.g. EVs and charging stations. There is also an underlying ICT infrastructure providing the control and price signal communication and the activation signals from an aggregator/DSO. The focal point is the OuI, which are the local or remote controller and the flexibility resource on the demand side, while the ICT infrastructure is assumed to operate normally implicitly. &lt;/p>&lt;p>&lt;img src="image3.png"/>&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Target measures&lt;/th>
+&lt;td colspan=1>
+&lt;p>Voltage, Current, Harmonic Distortion.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Input and output parameters&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Controllable input parameters: activation control of EVs, power of EVs &lt;/li>
+&lt;li>Uncontrollable input parameters: loading level, power&lt;/li>
+&lt;li>Measured parameters: voltage, current, distortion, frequency&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Design&lt;/th>
+&lt;td colspan=1>
+&lt;p>One hour participation in flexibility markets (e.g. in Frequency Regulation) with multiple electric vehicles in a local area. Number of EVs is variable as well as the power change capacity of individual EVs. &lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Initial system state&lt;/th>
+&lt;td colspan=1>
+&lt;p>Initially none of the controlled EVs are in operation, but rest of the loads are in operation to reach an initially stability. &lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Evolution of system state and test signals&lt;/th>
+&lt;td colspan=1>
+&lt;p>A random amount of EVs in random locations of the distribution grid will be activated and after the reaching new equilibrium the process is repeated.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Other parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>Frequency measurement, time of day, time of week, weather, SoC of EVs.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Temporal resolution&lt;/th>
+&lt;td colspan=1>
+&lt;p>1 sec time resolution.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Source of uncertainty&lt;/th>
+&lt;td colspan=1>
+&lt;p>EV user behaviour, willingness to participate in demand response.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Suspension criteria / Stopping criteria&lt;/th>
+&lt;td colspan=1>
+&lt;p>If after the initial state there are no EVs controlled within a couple of cycles or if the response to the activation causes the system to become unstable and unable to reach stability again. &lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table></description></item><item><title>Docs: Test Specification 19.02</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc19/19.02/</link><pubDate>Wed, 17 Apr 2024 00:00:00 +0000</pubDate><guid>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc19/19.02/</guid><description>
+&lt;h2 id="test-specification-definition">Test Specification Definition&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+ID&lt;/th>
+&lt;td colspan=1>
+&lt;p>19.02&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Reference to Test Case&lt;/th>
+&lt;td colspan=1>
+&lt;p>Test Case 19: Evaluation of unintended impacts of activation of flexibility resources on the quality of supply&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Title of Test&lt;/th>
+&lt;td colspan=1>
+&lt;p>Evaluation of the impact of ICT support system for flexibility activation on the quality of supply. &lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Rationale&lt;/th>
+&lt;td colspan=1>
+&lt;p>This test is about evaluating the adequacy and vulnerability of the ICT support system during flexibility activation. The ICT infrastructure facilitates the communication between the utility / DSO, aggregators, TSO/energy retailers, and the flexibility resources on the user end. The test focusses on the ICT's function to carry the direct load control (DLC) signal from utilities (DSOs or aggregators) to the flexibility resource. In the adequacy investigation, the aim is to assess the impact of delays and packets losses in the control signals of flexibility activation on the quality of the supply and stability of the system. In addition, it also looks into identifying the vulnerabilities of the ICT support system towards the misuse cases. It assess how these vulnerabilities can be exploited by an attacker and measures the impact of these attacks on quality of supply or the stability of the system.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Specific Test System
+(graphical)&lt;/th>
+&lt;td colspan=1>
+&lt;p>The test system, shown in figure below, consists a power system, ICT and Control system. The power system is a distribution network with loads/Flexibility resources such as EVs/heating loads. The ICT/control system consists a direct load controller either at the DSO or at an aggregator (optional) that sends switching signals to the flexibility resources. The aggregator avails flexibility resources to TSOs in accordance with the contractual agreement in the reserve market. Hence, depending on the frequency level and the associated power, control signals are sent to the flexibility resources by the aggregators. The ICT system consist the communication network connecting the controller at the DSO or aggregator with the TSO/ Energy retailer and the flexibility resource on the end user side. In the middle, an attacker may interfere with the operation of the aggregator's communication to the upstream controllers or downstream communication to the flexibility resource's control.&lt;/p>&lt;p>&lt;img src="image4.png"/>&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Target measures&lt;/th>
+&lt;td colspan=1>
+&lt;p>Frequency, Voltage quality, vulnerability for LAA, delay, packet loss. &lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Input and output parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>Input parameters: Attack behavior, attack duration, background traffic behavior, Load/power of EVs (MW), nominal frequency,
+Output Parameters: delay, packet loss, load (MW), ∆ frequency, Voltage etc&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Design&lt;/th>
+&lt;td colspan=1>
+&lt;p>The test design for achieving PoI #3 is as follows:&lt;/p>&lt;ul>
+&lt;li>The system operates normally with the nominal operating frequency and voltages at every point in the system are within the specified margins.&lt;/li>
+&lt;li>Add some background traffic in the communication between controllers and flexibility resource.
+OR
+Initiate the cyber-attack injecting false commands on the aggregator's or controller's communication to the flexibility resource.&lt;/li>
+&lt;li>Change the load dynamics that can result in a significant deviation in the operating frequency or voltage values in the system. &lt;/li>
+&lt;li>The change in loads will be automatically followed by flexibility activation. This could be either a frequency regulation based on a pre-agreed contractual agreement or an activation for congestion management by the DSO. The activation will last for a specified amount of time.&lt;/li>
+&lt;li>collect the statistics/ output and target measures&lt;/li>
+&lt;li>Repeat these steps with a varying background traffic or attack behaviors.&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Initial system state&lt;/th>
+&lt;td colspan=1>
+&lt;p>In the power system: Normal loads in the system operate and the system reach stability. There is no activation of flexibility resources. &lt;/p>&lt;p>In the ICT system: no attack is initiated, and no background traffic is injected. &lt;/p>&lt;p>The operating frequency is at nominal value ~ 50 Hz, and the voltage quality is within the limits (±10% ) in the LV network.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Evolution of system state and test signals&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>The system state starts with its initial state as presented above (Frequency ~ 50 Hz and Voltage (±10%)&lt;/li>
+&lt;li>The load dynamics changes results in a small deviation of frequency from its nominal value or a voltage drop.
+(Frequency ±1% (49.5 - 50.5 Hz) OR in a deviation on the voltage quality ±10% (0.90 pu &amp;lt; V &amp;lt; 1.10 pu)&lt;/li>
+&lt;li>Flexibility activation is initiated to account for the deviation/imbalance. The use of background traffic or initiating the cyber-attack may or may not have an impact on the target measures. Hence, the Frequency may go back to the nominal frequency ~50 Hz or the deviation may sustain/increased &amp;gt; ±1% (f &amp;lt; 49.5 or f &amp;gt; 50.5 Hz) due to the cyber-attacks such as LLA. Similarly, if the activation is for congestion management/voltage regulation, the deviation on the voltage quality may either goes back to ranges within the limits ±10% (0.90 pu &amp;lt; V &amp;lt; 1.10 pu) or a sustained or increased deviation due to the delays and packet losses in the flexibility activation signals V &amp;gt; ±10% (V &amp;lt; 0.90 pu or V &amp;gt; 1.10 pu)&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Other parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>Customer side inconvenience parameter, aging of EV batter due to frequent charge-discharge cycles.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Temporal resolution&lt;/th>
+&lt;td colspan=1>
+&lt;p>100 µs&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Source of uncertainty&lt;/th>
+&lt;td colspan=1>
+&lt;p>Cyber-attack behavior, (data) traffic behavior, Load dynamics or power demand on flexibility resources.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Suspension criteria / Stopping criteria&lt;/th>
+&lt;td colspan=1>
+&lt;p>If the system become unstable i.e., ∆ frequency passes the threshold, overloading of the lines passing the threshold values.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table></description></item></channel></rss>

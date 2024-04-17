@@ -1,0 +1,120 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ERIGrid 2.0 Test Case Repository – Test Case 6</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc06/</link><description>Recent content in Test Case 6 on ERIGrid 2.0 Test Case Repository</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 17 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc06/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Test Specification TC6.TS1</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc06/tc6.ts1/</link><pubDate>Wed, 17 Apr 2024 00:00:00 +0000</pubDate><guid>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc06/tc6.ts1/</guid><description>
+&lt;h2 id="test-specification-definition">Test Specification Definition&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+ID&lt;/th>
+&lt;td colspan=1>
+&lt;p>TC6.TS1&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Reference to Test Case&lt;/th>
+&lt;td colspan=1>
+&lt;p>TC6&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Title of Test&lt;/th>
+&lt;td colspan=1>
+&lt;p>Validation of islanded microgrid ability to restore frequency deviations in a stable manner &lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Rationale&lt;/th>
+&lt;td colspan=1>
+&lt;p>This test allows us to validate the ability of core components of the microgrid to effectively respond and tackle imbalances that result in frequency deviations. These core components include the MFC, the DER units that provide reserves as well as communication parts that can influence the stability of the control due to time delays.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Specific Test System
+(graphical)&lt;/th>
+&lt;td colspan=1>
+&lt;p>&lt;img src="image2.png"/>&lt;/p>&lt;p>The above test system is based on the LV distribution network benchmark application example by CIGRE1&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Target measures&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Restoration time &amp;lt;120s&lt;/li>
+&lt;li>Steady-state deviation: &amp;lt;0.1Hz&lt;/li>
+&lt;li>Reserves’ availability: &amp;gt;20%&lt;/li>
+&lt;li>DERs curtailment: &amp;lt;30%&lt;/li>
+&lt;li>Loads curtailment: &amp;lt;5%&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Input and output parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>Input parameters&lt;/p>&lt;ul>
+&lt;li>Solar irradiance&lt;/li>
+&lt;li>Wind speed&lt;/li>
+&lt;li>Ambient temperature&lt;/li>
+&lt;li>Load consumption&lt;/li>
+&lt;li>Breaker state&lt;/li>
+&lt;/ul>&lt;p>Output parameters&lt;/p>&lt;ul>
+&lt;li>Frequency&lt;/li>
+&lt;li>State-of-Charge&lt;/li>
+&lt;li>Power of Reserves&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Design&lt;/th>
+&lt;td colspan=1>
+&lt;p>The test considers several consecutive imbalances and frequency deviations. This is needed to sufficiently evaluate the capability of the frequency control system to cope with these incidents. It is possible that the initial state of the microgrid grid-connected with the exchange of power with the utility grid. At the beginning of the test the circuit breaker can be opened to isolate the microgrid and cause a disturbance in the power balance.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Initial system state&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>The circuit breaker at the PCC is open. Alternatively, it can be opened right after the start of the test as a potential disturbance source.&lt;/li>
+&lt;li>The combination of the RES units should provide at least 20% of their nominal power.&lt;/li>
+&lt;li>The consumption of the loads should be at least 20% of the maximum consumption.&lt;/li>
+&lt;li>The battery SOC should be between 40 and 60%&lt;/li>
+&lt;li>The imbalance should be under 5%.&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Evolution of system state and test signals&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>The microgrid starts in islanded mode or in grid-connected mode. &lt;/li>
+&lt;li>Firstly, the system is sufficiently balanced so that a small number of reserves (ideally zero) are implemented and the frequency is nominal (50Hz).&lt;/li>
+&lt;li>One imbalance emerges which leads to significant frequency deviation and the consequent activation of a large part of reserves.&lt;/li>
+&lt;li>Subsequent disturbances emerge either before or after the restoration of frequency to its nominal value. &lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Other parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>N/A&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Temporal resolution&lt;/th>
+&lt;td colspan=1>
+&lt;p>Monitoring quantities should have a maximum sampling time of 0.1s.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Source of uncertainty&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Environmental conditions&lt;/li>
+&lt;li>Consumers’ demand&lt;/li>
+&lt;li>Grid parameters variability i.e., resistance/inductance ratio &lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Suspension criteria / Stopping criteria&lt;/th>
+&lt;td colspan=1>
+&lt;p>The test should be suspended and restarted if one of the quality attributes described in the TC is not met. Also, suspension may be due to deviation from the desired initial conditions described above.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table></description></item></channel></rss>

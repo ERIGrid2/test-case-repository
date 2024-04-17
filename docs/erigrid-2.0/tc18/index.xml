@@ -1,0 +1,241 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ERIGrid 2.0 Test Case Repository – Test Case 18</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc18/</link><description>Recent content in Test Case 18 on ERIGrid 2.0 Test Case Repository</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 17 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc18/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Test Specification 18.01</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc18/18.01/</link><pubDate>Wed, 17 Apr 2024 00:00:00 +0000</pubDate><guid>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc18/18.01/</guid><description>
+&lt;h2 id="test-specification-definition">Test Specification Definition&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+ID&lt;/th>
+&lt;td colspan=1>
+&lt;p>18.01&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Reference to Test Case&lt;/th>
+&lt;td colspan=1>
+&lt;p>TC18 Evaluation of various service definitions and activation patterns&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Title of Test&lt;/th>
+&lt;td colspan=1>
+&lt;p>Evaluation of system services and activation patterns after functional disruption in the local grid&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Rationale&lt;/th>
+&lt;td colspan=1>
+&lt;p>Aim is to evaluate system services and connected activation patterns of an aggregator platform during and/or after a functional disruption in the near location (e.g., Fault Ride Through, blackstart assistance, virtual inertia provision)&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Specific Test System
+(graphical)&lt;/th>
+&lt;td colspan=1>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Target measures&lt;/th>
+&lt;td colspan=1>
+&lt;p>The test scenarios serve the validation of continuous service provision under various disruptions and system settings. &lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Input and output parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>Control signal before and after the disruption as an input. Active power as an output. &lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Design&lt;/th>
+&lt;td colspan=1>
+&lt;p>30 minute long simulation period during which a disruption is introduced that breaks the connection of communication and/or electricity from aggregator/public grid. &lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Initial system state&lt;/th>
+&lt;td colspan=1>
+&lt;p>Initially the system service is operating normally and the grid is functioning without disruptions.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Evolution of system state and test signals&lt;/th>
+&lt;td colspan=1>
+&lt;p>A disruption is introduced. Communication and/or grid connection is momentarily lost. System(s) providing the flexibility service is then evaluated to see if nornal operation can be established again.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Other parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>communication latency, communication signal, voltage and current observed from the DER(s)&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Temporal resolution&lt;/th>
+&lt;td colspan=1>
+&lt;p>1 second resolution&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Source of uncertainty&lt;/th>
+&lt;td colspan=1>
+&lt;p>Only certain amount of different kind of disruptions can be tested for. In other words, everything cannot be tested.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Suspension criteria / Stopping criteria&lt;/th>
+&lt;td colspan=1>
+&lt;p>30 minutes or permanent loss of communication and/or grid connection&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/table></description></item><item><title>Docs: Test Specification 18.02</title><link>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc18/18.02/</link><pubDate>Wed, 17 Apr 2024 00:00:00 +0000</pubDate><guid>https://erigrid2.github.io/test-case-repository/docs/erigrid-2.0/tc18/18.02/</guid><description>
+&lt;h2 id="test-specification-definition">Test Specification Definition&lt;/h2>
+&lt;table>
+&lt;tr>
+&lt;th colspan=1>
+ID&lt;/th>
+&lt;td colspan=1>
+&lt;p>18.02&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Reference to Test Case&lt;/th>
+&lt;td colspan=1>
+&lt;p>TC18 Evaluation of various service definitions and activation patterns&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Title of Test&lt;/th>
+&lt;td colspan=1>
+&lt;p>Evaluating the provision of regulatory aggregator services under irregularities after network disruptions or errors in forecast/measurement&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Rationale&lt;/th>
+&lt;td colspan=1>
+&lt;p>This test investigates aggregator services that are involved in regulating the grid properties towards desired values in case of emerging deviations:&lt;/p>&lt;ul>
+&lt;li>Coordinated voltage control&lt;/li>
+&lt;li>Fast frequency response&lt;/li>
+&lt;li>Virtual inertia provision&lt;/li>
+&lt;/ul>&lt;p>In the process, the individual activation patterns of the services undergo assessment. Simulation software provides the various auxiliary services required for their functionality:&lt;/p>&lt;ul>
+&lt;li>Collection of updated capabilities from DERs&lt;/li>
+&lt;li>Evaluation of automatic restoration reserve provision by DERs, storage units and controllable loads&lt;/li>
+&lt;li>Computation of optimal and feasible P/Q set-point&lt;/li>
+&lt;li>Verification of actual P/Q produced and possible recalculation&lt;/li>
+&lt;/ul>&lt;p>ICT-related effects are abstracted as activation delays, making this an “idealized” case.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Specific Test System&lt;/th>
+&lt;td colspan=1>
+&lt;p>This Test Specification requires a simulator of a grid (MV/LV distribution network or single LV distribution feeder) with several connected DERs / storage units.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Target measures&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Safe and robust voltage for all nodes: Direct voltage operating regions not violated&lt;/li>
+&lt;li>Frequency restoration time: &amp;lt;120sec&lt;/li>
+&lt;li>Steady-state deviation: &amp;lt;0.1Hz&lt;/li>
+&lt;li>Reserves availability (power/energy): &amp;gt;20%&lt;/li>
+&lt;li>DERs curtailment: &amp;lt;30%&lt;/li>
+&lt;li>Loads curtailment: &amp;lt;5%&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Input and output parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>Uncontrollable input parameters:&lt;/p>&lt;ul>
+&lt;li>Grid topology&lt;/li>
+&lt;li>Generation and load profiles&lt;/li>
+&lt;li>DER controllers parameters&lt;/li>
+&lt;li>Tie-line exchange specifications&lt;/li>
+&lt;/ul>&lt;p>Controllable input parameters:&lt;/p>&lt;ul>
+&lt;li>Voltage set-point&lt;/li>
+&lt;li>Frequency set-point&lt;/li>
+&lt;li>Load value&lt;/li>
+&lt;/ul>&lt;p>Output parameters:&lt;/p>&lt;ul>
+&lt;li>Node voltages&lt;/li>
+&lt;li>Power losses&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Test Design&lt;/th>
+&lt;td colspan=1>
+&lt;p>The test considers several consecutive imbalances and voltage/frequency deviations in order to sufficiently evaluate the capability of the voltage/frequency control system to cope with such incidents. The following border cases are defined:&lt;/p>&lt;ul>
+&lt;li>Maximally decrease input voltage/frequency, use constant voltage/frequency set-point &lt;/li>
+&lt;li>Maximally increase input voltage/frequency, use constant voltage/frequency set-point &lt;/li>
+&lt;li>Decrease voltage/frequency set-point from maximal to minimal value, do not artificially vary input voltage/frequency &lt;/li>
+&lt;li>Increase voltage/frequency set-point from minimal to maximal value, do not artificially vary input voltage/frequency&lt;/li>
+&lt;/ul>&lt;ol>
+&lt;li>The operating set-points are determined.&lt;/li>
+&lt;li>The output stabilizes.&lt;/li>
+&lt;li>The input voltage/frequency and/or the set-points are varied according to the current border case.&lt;/li>
+&lt;li>The test criteria are assessed.&lt;/li>
+&lt;li>Steps 2-4 are repeated until the testing of each predefined border case was concluded.&lt;/li>
+&lt;/ol>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Initial system state&lt;/th>
+&lt;td colspan=1>
+&lt;p>Initial power flow conditions:&lt;/p>&lt;ul>
+&lt;li>The voltage/frequency value (output) matches the voltage/frequency set-point.&lt;/li>
+&lt;li>The combination of the RES units should provide at least 20% of their nominal power.&lt;/li>
+&lt;li>The consumption of the loads should be at least 20% of the maximum consumption.&lt;/li>
+&lt;li>The imbalance should be under 5%.&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Evolution of system state and test signals&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>At first, the system is sufficiently balanced with only a small amount of reserves (ideally zero) implemented and the voltage/frequency nominal.&lt;/li>
+&lt;li>An imbalance emerges which leads to a significant voltage/frequency deviation and the consequent activation of a large part of reserves after a simulated communication delay.&lt;/li>
+&lt;li>Consumption or production changes in order to reduce the variation.&lt;/li>
+&lt;li>Subsequent disturbances emerge either before or after the restoration of voltage/frequency to its nominal value.&lt;/li>
+&lt;li>Having started at Inp0, the voltage/frequency changes up to Val1, then down to Val2 etc. with varying step sizes (St1, St2, ...). For example, changes to the frequency could occur with a fixed ramp rate and amplitude.&lt;/li>
+&lt;li>The test is successful if load voltage/frequency is always regulated within its operating interval [TOL-, TOL+].&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Other parameters&lt;/th>
+&lt;td colspan=1>
+&lt;p>N/A&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Temporal resolution&lt;/th>
+&lt;td colspan=1>
+&lt;p>The simulation is continuous, with time step sizes depending on the software experiment:&lt;/p>&lt;ul>
+&lt;li>Time constants inside SuT in-between 50 μs and 5 s&lt;/li>
+&lt;li>Monitoring quantities with a maximum sampling time of 0.1 sec.&lt;/li>
+&lt;li>Internal time resolution of communication simulation&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Source of uncertainty&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Grid parameters variability (i.e., resistance/inductance ratio)&lt;/li>
+&lt;li>Timing deviations, communication delays&lt;/li>
+&lt;li>Consumers’ demand&lt;/li>
+&lt;li>Environmental conditions&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th colspan=1>
+Suspension criteria / Stopping criteria&lt;/th>
+&lt;td colspan=1>
+&lt;ul>
+&lt;li>Restoration and stabilization of regular network behavior and properties (according to power quality standard EN50160)&lt;/li>
+&lt;li>Passage of predetermined critical amount of time&lt;/li>
+&lt;li>Violation of quality attributes&lt;/li>
+&lt;li>Deviation from initial conditions during start&lt;/li>
+&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;/table></description></item></channel></rss>
