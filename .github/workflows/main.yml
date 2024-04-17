@@ -28,8 +28,16 @@ jobs:
         fetch-depth: 0         # Fetch all history for .GitInfo and .Lastmod
 
     - name: Download Markdown Files
-      run: |
-        ./get_latest_md.sh ${{ github.event.client_payload.artifact_download_url }}
+      # run: |
+      #   ./get_latest_md.sh ${{ github.event.client_payload.artifact_download_url }}
+      uses: actions/download-artifact@v4
+      with:
+        name: test-cases-markdown
+        github-token: ${{ secrets.REPO_TRIGGER_KEY }}
+        repository: ERIGrid2/test-case-repository-word2md
+        run-id: ${{ github.event.client_payload.run_id }}
+
+
 
     - name: Setup Go
       uses: actions/setup-go@v5
