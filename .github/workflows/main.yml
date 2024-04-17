@@ -33,6 +33,7 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: test-cases-markdown
+        path: content/en/docs/
         github-token: ${{ secrets.REPO_TRIGGER_KEY }}
         repository: ERIGrid2/test-case-repository-word2md
         run-id: ${{ github.event.client_payload.run_id }}
